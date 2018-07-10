@@ -1,0 +1,132 @@
+@mixin flex {
+  display: flex;
+}
+
+@mixin flex-1 {
+  flex: 1;
+}
+
+@mixin flex-row {
+  flex-direction: row;
+}
+
+@mixin flex-column {
+  flex-direction: column;
+}
+
+@mixin row-center {
+  justify-content: center;
+}
+
+@mixin row-between {
+  justify-content: space-between;
+}
+
+@mixin row-around {
+  justify-content: space-around;
+}
+
+@mixin column-center {
+  align-items: center;
+}
+
+@mixin column-start {
+  align-items: flex-start;
+}
+
+@mixin column-end {
+  align-items: flex-end;
+}
+
+@mixin flex-wrap {
+  flex-wrap: wrap;
+}
+
+@mixin flex-row-center {
+  @include flex;
+  @include flex-row;
+  @include row-center;
+  @include column-center;
+}
+
+@mixin flex-row-between {
+  @include flex;
+  @include flex-row;
+  @include row-between;
+  @include column-center;
+}
+
+@mixin flex-row-around {
+  @include flex;
+  @include flex-row;
+  @include row-around;
+  @include column-center;
+}
+
+@mixin flex-column-center {
+  @include flex;
+  @include flex-column;
+  @include column-center;
+}
+
+@mixin radius($radius: 50%) {
+  border-radius: $radius;
+}
+
+@mixin text-overflow {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin multiline-text-overflow($line: 2) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $line;
+}
+
+@mixin rotate($rotate) {
+  transform: rotate($rotate);
+}
+
+@mixin scale($scale) {
+  transform: scale($scale);
+}
+
+@mixin translateX($x) {
+  transform: translateX($x);
+}
+
+@mixin translateY($y) {
+  transform: translateY($y);
+}
+
+@mixin top-triangle ($color, $size_, $size: $size_) {
+  border-bottom: $size_ solid $color;
+  border-top: none;
+  border-left: $size solid transparent;
+  border-right: $size solid transparent;
+}
+
+@mixin right-triangle ($color, $size_, $size: $size_) {
+  border-left: $size_ solid $color;
+  border-right: none;
+  border-top: $size solid transparent;
+  border-bottom: $size solid transparent;
+}
+
+@mixin bottom-triangle ($color, $size_, $size: $size_) {
+  border-top: $size_ solid $color;
+  border-bottom: none;
+  border-left: $size solid transparent;
+  border-right: $size solid transparent;
+}
+
+@mixin left-triangle ($color, $size_, $size: $size_) {
+  border-right: $size_ solid $color;
+  border-left: none;
+  border-top: $size solid transparent;
+  border-bottom: $size solid transparent;
+}

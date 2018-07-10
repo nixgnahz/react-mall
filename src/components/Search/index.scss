@@ -1,0 +1,115 @@
+@import '../app';
+
+.search {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  &-input {
+    @include flex-row-between;
+    position: relative;
+    margin: 0.5rem;
+    &-icon {
+      position: absolute;
+      top: 0.05rem;
+      left: 0.25rem;
+    }
+    input {
+      @include flex-1;
+      background-color: #ededed;
+      border: none;
+      box-sizing: border-box;
+      height: 1.4rem;
+      line-height: 1.4rem;
+      padding-left: 1.5rem;
+      @include radius(0.2rem);
+      outline: none;
+    }
+    &-delete {
+      position: absolute;
+      right: 2rem;
+      top: 0.07rem;
+    }
+    button {
+      margin-left: 0.45rem;
+      color: #646567;
+      font-size: 0.6rem;
+      background-color: transparent;
+      border: none;
+      outline: none;
+    }
+  }
+  &-box {
+    margin: 0.7rem 0.3rem;
+    &.recent {
+      position: relative;
+    }
+    &-title {
+      font-size: 0.55rem;
+      @include flex;
+      align-items: center;
+      color: #9b9b9b;
+      margin-bottom: 0.25rem;
+      span {
+        margin-left: 0.25rem;
+      }
+    }
+    &-list {
+      @include flex;
+      @include flex-wrap;
+      font-size: 0.5rem;
+      li {
+        background-color: #f8f8f8;
+        padding: 0px 0.5rem;
+        height: 1.1rem;
+        margin: 0.25rem 0.25rem 0.25rem 0px;
+        line-height: 1.1rem;
+        text-align: center;
+        @include radius(0.55rem);
+      }
+    }
+    &-delete {
+      position: absolute;
+      top: 0px;
+      right: 0.45rem;
+    }
+  }
+  &-result {
+    li {
+      @include flex-row-center;
+      border-bottom: 1px solid #f4f4f4;
+      padding: 0.5rem;
+    }
+    &-cover {
+      width: 3.2rem;
+      height: 3.2rem;
+      background-size: cover;
+      background-position: center;
+    }
+    &-info {
+      @include flex-1;
+      font-size: 0.5rem;
+      margin-left: 0.5rem;
+      p {
+        &:first-child {
+
+        }
+        &:nth-child(2) {
+          @include multiline-text-overflow(2);
+          color: $light-gray;
+          font-size: 0.5rem;
+          width: 110%;
+          -webkit-transform-origin-x: 0;
+          -webkit-transform: scale(0.9);
+          margin: 0.1rem 0px;
+        }
+        &:nth-child(3) {
+          color: #e02e24;
+          span {
+            margin-left: 0.15rem;
+          }
+        }
+      }
+    }
+  }
+}

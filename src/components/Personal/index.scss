@@ -1,0 +1,103 @@
+@import '../app';
+
+.personal {
+  &-head {
+    margin-bottom: 0.25rem;
+    background-color: #ffffff;
+    padding: 0.25rem;
+    @include flex-row-center;
+    &-portrait {
+      width: 2.5rem;
+      height: 2.5rem;
+      @include radius;
+    }
+    &-name {
+      margin-left: 0.5rem;
+      color: $dark-gray;
+      p:first-child {
+        font-size: 0.65rem;
+        font-weight: 500;
+      }
+      p:last-child {
+        display: inline-block;
+        font-size: 0.5rem;
+        height: 1rem;
+        color: #ffffff;
+        padding: 0rem 0.75rem;
+        line-height: 1rem;
+        @include radius(0.5rem);
+        @include scale(0.85);
+        &.normal {
+          background-color: #e3e2e1;
+          color: #9a9a9a;
+        }
+        &.vip {
+          background-color: #ff9e3e;
+        }
+      }
+    }
+  }
+  &-order {
+    background-color: #ffffff;
+    padding: 0.5rem 0px;
+    &-title {
+      font-size: 0.7rem;
+      margin: 0px 0.75rem;
+      @include flex-row-between;
+      &-enter {
+        @include flex-row-center;
+        font-size: 0.55rem;
+        color: $light-gray;
+        span {
+          margin-right: 0.25rem;
+        }
+      }
+    }
+    ul {
+      margin: 0.75rem 0px 0.25rem;
+      @include flex-row-between;
+      li {
+        @include flex-1;
+        @include flex-column-center;
+        color: $dark-gray;
+        span {
+          margin-top: 0.1rem;
+          font-size: 0.5rem;
+        }
+      }
+    }
+  }
+  &-actions {
+    background-color: #ffffff;
+    margin: 0.35rem 0px;
+    padding: 0.75rem 0.05rem;
+    @include flex-row-between;
+    font-size: 0.5rem;
+    color: $dark-gray;
+    p {
+      @include flex-column-center;
+      @include flex-1;
+      span {
+        margin-top: 0.25rem;
+      }
+    }
+  }
+  &-info {
+    li {
+      @include flex-row-between;
+      background-color: #ffffff;
+      font-size: 0.7rem;
+      padding: 0.5rem 0.25rem;
+      border-top: 1px solid #e6e6e6;
+      &:first-child {
+        border-top: none;
+      }
+      p {
+        @include flex-row-center;
+        span {
+          margin-left: 0.5rem;
+        }
+      }
+    }
+  }
+}
