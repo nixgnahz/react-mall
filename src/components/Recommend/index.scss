@@ -7,7 +7,7 @@
     background-color: #ffffff;
     font-size: 0.5rem;
     padding: 0.35rem 0px;
-    color: #e02e24;
+    color: $red-color;
     span {
       margin-left: 0.25rem;
     }
@@ -34,7 +34,7 @@
         font-size: 0.5rem;
         margin: 0.35rem 0.15rem;
         .price {
-          color: #e02e24;
+          color: $red-color;
           @include scale(0.8);
           span {
             display: inline-block;

@@ -8,7 +8,7 @@ class Actions extends React.Component {
       <div className="personal-actions">
         <p>
           <Icon icon="youhuiquan" size='big'/>
-          <span>我的优惠券</span>
+          <span>优惠券</span>
         </p>
         <p>
           <Icon icon="collect" size='big'/>

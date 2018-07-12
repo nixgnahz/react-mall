@@ -41,7 +41,7 @@
     background-color: #ffffff;
     padding: 0.5rem 0px;
     &-title {
-      font-size: 0.7rem;
+      font-size: 0.65rem;
       margin: 0px 0.75rem;
       @include flex-row-between;
       &-enter {
@@ -86,9 +86,9 @@
     li {
       @include flex-row-between;
       background-color: #ffffff;
-      font-size: 0.7rem;
+      font-size: 0.6rem;
       padding: 0.5rem 0.25rem;
-      border-top: 1px solid #e6e6e6;
+      border-top: 1px solid $border-color;
       &:first-child {
         border-top: none;
       }

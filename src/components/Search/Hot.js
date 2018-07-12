@@ -21,7 +21,7 @@ const hotArr = [
   },
   {
     id: 5,
-    value: '儿童教育玩具'
+    value: '电磁炉'
   },
   {
     id: 6,
@@ -31,6 +31,7 @@ const hotArr = [
 
 class Hot extends React.Component {
   render () {
+    const {search} = this.props
     return (
       <div className="search-box">
         <p className="search-box-title">
@@ -39,7 +40,7 @@ class Hot extends React.Component {
         </p>
         <ul className="search-box-list">
           {hotArr.map((item)=>
-            <li key={item.id}>{item.value}</li>
+            <li key={item.id} onClick={()=> {search(item.value)}}>{item.value}</li>
           )}
         </ul>
       </div>

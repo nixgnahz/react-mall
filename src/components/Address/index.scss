@@ -1,0 +1,205 @@
+@import "../app";
+
+.address {
+  &-list {
+    li {
+      margin-bottom: 0.5rem;
+      background-color: #ffffff;
+      font-size: 0.6rem;
+      border-bottom: 1px solid $border-color;
+      border-top: 1px solid $border-color;
+      &:first-child {
+        border-top: none;
+      }
+    }
+    &-head {
+      @include flex;
+      @include flex-row;
+      padding: 0.6rem 0.35rem 0.2rem;
+      .name {
+        width: 5rem;
+        margin-right: 0.5rem;
+        @include text-overflow;
+      }
+      .label {
+        margin-left: 0.5rem;
+        background-color: #a6c9f1;
+        color: #ffffff;
+        height: 0.7rem;
+        padding: 0px 0.25rem;
+        text-align: center;
+        line-height: 0.7rem;
+        @include radius(0.35rem);
+        span {
+          display: inline-block;
+          @include scale(0.7);
+          transform-origin: center center;
+        }
+      }
+    }
+    &-info {
+      color: $light-gray;
+      padding: 0.2rem 0rem 0.6rem;
+      margin: 0px 0.35rem;
+      font-size: 0.5rem;
+      border-bottom: 1px solid $border-color;
+    }
+    &-action {
+      font-size: 0.5rem;
+      color: $light-gray;
+      padding: 0.4rem 0.35rem;
+      @include flex-row-between;
+      span {
+        margin-left: 0.1rem;
+      }
+      &-icon {
+        @include flex-row-center;
+      }
+      &-default {
+        @include flex-row-center;
+        margin-right: 4rem;
+      }
+    }
+  }
+  &-btn {
+    position: fixed;
+    bottom: 0px;
+    background-color: $red-color;
+    font-size: 0.6rem;
+    color: #ffffff;
+    height: 1.5rem;
+    line-height: 1.5rem;
+    @include radius(0.75rem);
+    @include flex-row-center;
+    &.add {
+      width: 90%;
+      margin: 0.5rem 5%;
+    }
+    &.save {
+      width: 75%;
+      margin: 0.5rem 12.5%;
+    }
+    span {
+      margin-left: 0.5rem;
+    }
+  }
+  &-edit {
+    &-input {
+      font-size: 0.5rem;
+      background-color: #ffffff;
+      margin-bottom: 0.5rem;
+      color: $light-gray;
+      li {
+        border-bottom: 1px solid $border-color;
+        @include flex-row-between;
+        padding: 0.5rem;
+        span {
+          width: 3rem;
+        }
+        input {
+          flex: 1;
+        }
+        textarea {
+          width: 100%;
+          height: 2.5rem;
+          resize: none;
+          outline: none;
+          font-size: 0.55rem;
+          box-sizing: border-box;
+          line-height: 1rem;
+        }
+      }
+    }
+  }
+  &-label {
+    background-color: #ffffff;
+    position: absolute;
+    bottom: 0px;
+    border-radius: 0.5rem 0.5rem 0px 0px;
+    width: 100%;
+    font-size: 0.5rem;
+    padding-top: 1.5rem;
+    li {
+      @include flex-row-between;
+      padding: 0.5rem;
+      p {
+        @include flex-row-center;
+        span {
+          margin-left: 0.25rem;
+        }
+      }
+      input {
+        border-bottom: 1px solid $border-color;
+        width: 80%;
+        font-size: 0.5rem;
+        padding: 0.25rem;
+      }
+    }
+    .label-btn {
+      width: 75%;
+      margin: 0.5rem 12.5%;
+      background-color: $red-color;
+      font-size: 0.6rem;
+      color: #ffffff;
+      height: 1.5rem;
+      line-height: 1.5rem;
+      @include radius(0.75rem);
+    }
+    .close-btn {
+      position: absolute;
+      right: 0rem;
+      top: 0rem;
+    }
+  }
+  &-choice {
+    background-color: #ffffff;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    font-size: 0.5rem;
+    &-title {
+      color: $light-gray;
+      padding: 0.4rem 0px;
+      @include flex-row-center;
+      border-bottom: 1px solid $border-color;
+      span {
+        position: absolute;
+        right: 0.5rem;
+      }
+    }
+    &-detail {
+      border-bottom: 1px solid $border-color;
+      @include flex;
+      @include flex-row;
+      p {
+        text-align: center;
+        padding: 0.4rem 0rem;
+        width: 20%;
+        margin: 0px 2.5%;
+        border-bottom: 2px solid transparent;
+        &.active {
+          border-bottom: 2px solid $red-color;
+        }
+      }
+    }
+    .row-choice {
+      @include flex;
+      @include flex-row;
+      .scroll-mask {
+        width: 20%;
+        margin: 0px 2.5%;
+        height: 350px;
+        overflow: scroll;
+        .level {
+          li {
+            @include flex-row-center;
+            padding: 0.2rem 0px;
+            span {
+              margin-right: 0.25rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}

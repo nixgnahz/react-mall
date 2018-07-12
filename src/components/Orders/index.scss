@@ -1,0 +1,126 @@
+@import "../app";
+
+.orders {
+  &-input {
+    @include flex-row-between;
+    position: relative;
+    margin: 0.5rem;
+    &-icon {
+      position: absolute;
+      top: 0.05rem;
+      left: 0.25rem;
+    }
+    input {
+      @include flex-1;
+      background-color: #ffffff;
+      height: 1.4rem;
+      line-height: 1.4rem;
+      padding-left: 1.5rem;
+      @include radius(0.2rem);
+    }
+  }
+  &-navbar {
+    background-color: #ffffff;
+    margin: 0.25rem 0px;
+    ul {
+      @include flex-row-around;
+      font-size: 0.6rem;
+      li {
+        @include flex-1;
+        padding: 0.5rem 0px;
+        margin: 0px 0.4rem;
+        text-align: center;
+        border-bottom: 1px solid transparent;
+        &.active {
+          border-bottom: 1px solid $red-color;
+        }
+      }
+    }
+  }
+  &-empty {
+    @include flex-column-center;
+    margin-top: 3rem;
+    p {
+      font-size: 0.5rem;
+      margin-top: 0.5rem;
+    }
+  }
+  .order-detail {
+    font-size: 0.55rem;
+    li {
+      background-color: #ffffff;
+      margin: 0.5rem 0px;
+      .order-list {
+        &-head {
+          @include flex-row-between;
+          padding: 0.4rem;
+          &-status {
+            color: $red-color;
+          }
+        }
+        &-info {
+          @include flex-row-between;
+          background-color: #fafafa;
+          padding: 0.4rem;
+          &-cover {
+            width: 2.7rem;
+            height: 2.7rem;
+            @include cover;
+          }
+          &-detail {
+            width: 55%;
+            height: 2.7rem;
+            @include flex-column-center;
+            justify-content: space-between;
+            align-items: flex-start;
+            &-name {
+              @include multiline-text-overflow;
+            }
+            &-param {
+              font-size: 0.5rem;
+              color: $light-gray;
+            }
+          }
+          &-price {
+            width: 2.7rem;
+            height: 2.7rem;
+            @include flex-column-center;
+            justify-content: space-between;
+            align-items: flex-end;
+
+          }
+        }
+        &-total {
+          padding: 0.4rem;
+          text-align: right;
+          font-size: 0.5rem;
+          span {
+            &:last-child {
+              margin-left: 0.2rem;
+              font-size: 0.6rem;
+            }
+          }
+        }
+      }
+    }
+    &-action {
+      text-align: right;
+      border-top: 1px solid $border-color;
+      span {
+        display: inline-block;
+        width: 3.5rem;
+        height: 1rem;
+        @include radius(0.5rem);
+        border: 1px solid $border-color;
+        margin: 0.5rem 0.25rem;
+        text-align: center;
+        line-height: 1rem;
+        font-size: 0.5rem;
+        &.light {
+          color: $red-color;
+          border: 1px solid $red-color;
+        }
+      }
+    }
+  }
+}

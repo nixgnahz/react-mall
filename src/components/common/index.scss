@@ -1,3 +1,5 @@
+@import '../app';
+
 .icon-svg {
   vertical-align: -0.15em;
   overflow: hidden;
@@ -26,4 +28,25 @@
 .icon-svg-bigger {
   width: 4.5rem;
   height: 4.5rem;
+}
+
+.loading {
+  @include flex-row-center;
+  padding: 0.5rem 0px;
+  &-icon {
+    animation: loading-rotate 1.5s infinite linear;
+    display: inline-block;
+    font-size: 0px;
+    transform-origin: center center;
+  }
+}
+
+@keyframes loading-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
