@@ -1,0 +1,174 @@
+@import "../app";
+
+.order-detail {
+  font-size: 0.5rem;
+  &-status {
+    @include gradient(right, #ff8c00, #ff5600);
+    color: #ffffff;
+    @include flex-row-around;
+    height: 3.5rem;
+    p {
+      font-size: 0.6rem;
+      @include flex;
+      @include flex-column;
+      span {
+        &:last-child {
+          font-size: 0.5rem;
+          margin-top: 0.2rem;
+          @include scale(0.9);
+          transform-origin: left;
+        }
+      }
+    }
+  }
+  &-address {
+    background-color: #ffffff;
+    font-size: 0.5rem;
+    padding: 0.6rem 0.4rem;
+    color: $light-gray;
+    @include flex-row-between;
+    div {
+      flex: 1;
+      margin-left: 0.4rem;
+      p {
+        @include flex-row-between;
+        &:last-child {
+          margin-top: 0.2rem;
+        }
+      }
+    }
+  }
+  &-goods {
+    margin-top: 0.35rem;
+    background-color: #ffffff;
+    font-size: 0.5rem;
+    &-shop {
+      @include flex;
+      @include flex-row;
+      padding: 0.4rem;
+      span {
+        margin-left: 0.25rem;
+      }
+    }
+    &-info {
+      background-color: #fafafa;
+      @include flex-row-between;
+      padding: 0.35rem;
+      .cover {
+        width: 2.5rem;
+        height: 2.5rem;
+        @include cover;
+      }
+      .info {
+        width: 60%;
+        height: 2.5rem;
+        @include flex;
+        @include flex-column;
+        justify-content: space-between;
+        align-items: flex-start;
+        p {
+          &:first-child {
+            @include multiline-text-overflow;
+            color: $dark-gray;
+          }
+          &:last-child {
+            color: $light-gray;
+            transform-origin: left;
+            @include scale(0.85);
+          }
+        }
+      }
+      .price {
+        height: 2.5rem;
+        @include flex;
+        @include flex-column;
+        align-items: flex-end;
+        justify-content: space-between;
+        p {
+          &:last-child {
+            color: $light-gray;
+
+          }
+        }
+      }
+    }
+    &-money {
+      padding: 0.4rem 0.25rem;
+      p {
+        @include flex-row-between;
+        span {
+          @include scale(0.95);
+          display: inline-block;
+          &:first-child {
+            transform-origin: left;
+          }
+          &:last-child {
+            transform-origin: right;
+          }
+        }
+        &:first-child {
+          padding: 0.2rem;
+        }
+        &:nth-last-child(2) {
+          border-bottom: 1px solid $border-color;
+          padding: 0.2rem 0.2rem 0.4rem;
+        }
+        &:nth-last-child(1) {
+          padding: 0.5rem 0.2rem 0.3rem;
+          span {
+            @include scale(1.05);
+            &:last-child {
+              color: $red-color;
+            }
+          }
+        }
+      }
+    }
+  }
+  &-call {
+    width: 100%;
+    background-color: #ffffff;
+    @include flex-row-center;
+    margin-top: 0.35rem;
+    padding: 0.35rem 0px;
+    span {
+      margin-left: 0.25rem;
+      color: #00a6ff;
+    }
+  }
+  &-order {
+    padding: 0rem 0.75rem;
+    background-color: #ffffff;
+    margin-top: 0.35rem;
+    p {
+      padding: 0.4rem 0px;
+      border-bottom: 1px solid $border-color;
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+  &-action {
+    position: fixed;
+    bottom: 0px;
+    border-top: 1px solid $border-color;
+    background-color: #ffffff;
+    width: 100%;
+    p {
+      float: right;
+      display: inline-block;
+      width: 3.5rem;
+      height: 1rem;
+      @include radius(0.5rem);
+      border: 1px solid $border-color;
+      margin: 0.4rem 0.4rem 0.4rem 0px;
+      text-align: center;
+      line-height: 1rem;
+      font-size: 0.5rem;
+      &.light {
+        color: $red-color;
+        border: 1px solid $red-color;
+      }
+    }
+  }
+}

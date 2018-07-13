@@ -103,28 +103,28 @@
   transform: translateY($y);
 }
 
-@mixin top-triangle ($color, $size_, $size: $size_) {
+@mixin top-triangle($color, $size_, $size: $size_) {
   border-bottom: $size_ solid $color;
   border-top: none;
   border-left: $size solid transparent;
   border-right: $size solid transparent;
 }
 
-@mixin right-triangle ($color, $size_, $size: $size_) {
+@mixin right-triangle($color, $size_, $size: $size_) {
   border-left: $size_ solid $color;
   border-right: none;
   border-top: $size solid transparent;
   border-bottom: $size solid transparent;
 }
 
-@mixin bottom-triangle ($color, $size_, $size: $size_) {
+@mixin bottom-triangle($color, $size_, $size: $size_) {
   border-top: $size_ solid $color;
   border-bottom: none;
   border-left: $size solid transparent;
   border-right: $size solid transparent;
 }
 
-@mixin left-triangle ($color, $size_, $size: $size_) {
+@mixin left-triangle($color, $size_, $size: $size_) {
   border-right: $size_ solid $color;
   border-left: none;
   border-top: $size solid transparent;
@@ -136,4 +136,11 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+@mixin gradient($dir, $from, $to) {
+  background: -webkit-linear-gradient($dir, $from, $to);
+  background: -o-linear-gradient($dir, $from, $to);
+  background: -moz-linear-gradient($dir, $from, $to);
+  background: linear-gradient(to $dir, $from, $to);
 }
