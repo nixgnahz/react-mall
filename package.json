@@ -3,12 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "antd": "^3.6.6",
-    "echarts": "^4.1.0",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "1.1.4"
+    "react-scripts": "1.1.4",
+    "swiper": "^4.3.3"
   },
   "scripts": {
     "start": "react-scripts start",

@@ -1,0 +1,39 @@
+@import "../app";
+
+.goods-detail {
+  .swiper-container {
+    font-size: 0px;
+    border: 1px solid $border-color;
+    img {
+      width: 100%;
+    }
+  }
+  &-action {
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    background-color: #ffffff;
+    @include flex-row-between;
+    font-size: 0.5rem;
+    border-top: 1px solid $border-color;
+    &-icon {
+      @include flex-column-center;
+      padding: 0.5rem 0.4rem;
+      border-right: 1px solid $border-color;
+    }
+    &-btn {
+      @include flex-1;
+      text-align: center;
+      color: #ffffff;
+      height: 1.9rem;
+      line-height: 1.9rem;
+      &.btn1 {
+        background-color: #ff9600;
+      }
+      &.btn2 {
+        background-color: $red-color;
+      }
+    }
+  }
+}
