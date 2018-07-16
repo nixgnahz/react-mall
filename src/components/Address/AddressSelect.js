@@ -6,7 +6,7 @@ class AddressSelect extends React.Component {
   render () {
     const {change} = this.props
     return (
-      <div className="float_mask">
+      <div className="float-mask">
         <div className='address-choice'>
           <p className='address-choice-title'>
             配送至

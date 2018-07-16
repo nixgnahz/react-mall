@@ -22,13 +22,14 @@ input {
   outline: none;
 }
 
-.float_mask {
+.float-mask {
   position: fixed;
   top: 0px;
   left: 0px;
   background-color: rgba(0,0,0,0.3);
   width: 100%;
   height: 100%;
+  z-index: 10;
 }
 
 button {

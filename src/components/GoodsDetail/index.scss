@@ -8,6 +8,72 @@
       width: 100%;
     }
   }
+  &-info {
+    padding: 0.5rem;
+    background-color: #ffffff;
+    font-size: 0.5rem;
+    margin-bottom: 0.5rem;
+    &-title {
+      font-size: 0.65rem;
+    }
+    &-desc {
+      color: $light-gray;
+      margin: 0.25rem 0px;
+      @include multiline-text-overflow;
+    }
+    &-price {
+      margin-bottom: 0.25rem;
+      .price {
+        font-size: 0.65rem;
+        color: $red-color;
+      }
+      .origin-price {
+        display: inline-block;
+        color: $light-gray;
+        text-decoration: line-through;
+        @include scale(0.9);
+        margin-left: 0.25rem;
+      }
+      .sales {
+        float: right;
+        color: $light-gray;
+        @include scale(0.9);
+      }
+    }
+    &-labels {
+      @include flex-row-between;
+      overflow-x: hidden;
+      white-space: nowrap;
+      padding: 0.5rem 0px;
+      border-top: 1px solid $border-color;
+      p {
+        margin: 0rem 1%;
+        @include flex-row-center;
+        span {
+          display: inline-block;
+          @include scale(0.8);
+        }
+      }
+    }
+    &-spec {
+      @include flex-row-between;
+      font-size: 0.5rem;
+      border-top: 1px solid $border-color;
+      padding-top: 0.5rem;
+      p {
+        @include scale(0.95);
+      }
+    }
+  }
+  &-cover {
+    padding: 0.5rem;
+    background-color: #ffffff;
+    font-size: 0px;
+    img {
+      width: 100%;
+      margin-bottom: 0.5rem;
+    }
+  }
   &-action {
     position: fixed;
     bottom: 0px;
@@ -33,6 +99,44 @@
       }
       &.btn2 {
         background-color: $red-color;
+      }
+    }
+  }
+  &-explain {
+    position: fixed;
+    bottom: 0px;
+    background-color: #ffffff;
+    width: 100%;
+    &-title {
+      font-size: 0.6rem;
+      @include flex-row-center;
+      padding: 0.5rem 0px;
+      border-bottom: 1px solid $border-color;
+      span {
+        position: absolute;
+        font-size: 0px;
+        top: 0.5rem;
+        right: 0.5rem;
+      }
+    }
+    &-list {
+      font-size: 0.5rem;
+      padding: 0.5rem 1rem;
+      li {
+        padding: 0.35rem 0px;
+        @include flex;
+        @include flex-row;
+        align-items: center;
+        div {
+          margin-left: 0.5rem;
+          p {
+            &:last-child {
+              color: $light-gray;
+              @include scale(0.8);
+              transform-origin: left;
+            }
+          }
+        }
       }
     }
   }

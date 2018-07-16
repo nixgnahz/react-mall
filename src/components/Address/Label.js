@@ -6,7 +6,7 @@ class Label extends React.Component {
   render () {
     const {change} = this.props
     return (
-      <div className="float_mask">
+      <div className="float-mask">
         <ul className="address-label">
           <li className='close-btn' onClick={change}>
             <Icon icon='close' size='small'/>
