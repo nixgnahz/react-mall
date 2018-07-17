@@ -4,7 +4,7 @@ import Icon from '../common/Icon'
 
 class Info extends React.Component {
   render () {
-    const {info, changeExplain} = this.props
+    const {info, changeExplain, changeSpec} = this.props
     return (
       <div className='goods-detail-info'>
         <p className='goods-detail-info-title'>{info.name}</p>
@@ -23,7 +23,7 @@ class Info extends React.Component {
           )}
           <Icon icon='enter' size='smaller'/>
         </div>
-        <div className='goods-detail-info-spec'>
+        <div className='goods-detail-info-spec' onClick={changeSpec}>
           <p>请选择 颜色 尺寸</p>
           <Icon icon='enter' size='smaller'/>
         </div>

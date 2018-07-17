@@ -140,4 +140,72 @@
       }
     }
   }
+  &-spec {
+    position: fixed;
+    bottom: 0px;
+    background-color: #ffffff;
+    width: 100%;
+    font-size: 0.5rem;
+    &-info {
+      @include flex;
+      @include flex-row;
+      &-cover {
+        width: 4rem;
+        height: 4rem;
+        @include cover;
+        margin: -1rem 0.5rem 0rem;
+        border: 2px solid $border-color;
+        @include radius(0.2rem);
+      }
+      &-price {
+        @include flex;
+        @include flex-column;
+        justify-content: space-around;
+        p {
+          &:nth-child(1) {
+            color: $red-color;
+            font-size: 0.7rem;
+          }
+          &:nth-child(2), &:nth-child(3) {
+            color: $dark-gray;
+            @include scale(0.95);
+            transform-origin: left;
+          }
+        }
+      }
+      &-close {
+        position: absolute;
+        right: 0.5rem;
+        top: 0.5rem;
+      }
+    }
+    &-list {
+      padding: 0.5rem 0.5rem 0.5rem;
+      border-bottom: 1px solid $border-color;
+      .title {
+        margin-bottom: 0.2rem;
+      }
+      ul {
+        @include flex;
+        @include flex-row;
+        @include flex-wrap;
+        li {
+          background-color: #f5f5f5;
+          padding: 0.15rem 0.35rem;
+          @include radius(0.1rem);
+          margin: 0.2rem 0.4rem 0.2rem 0px;
+        }
+      }
+    }
+    &-btn {
+      @include gradient(right, #ff7601, #ff4b00);
+      width: 90%;
+      height: 1.5rem;
+      line-height: 1.5rem;
+      text-align: center;
+      color: #ffffff;
+      margin: 0.25rem 5%;
+      @include radius(0.75rem);
+    }
+  }
 }

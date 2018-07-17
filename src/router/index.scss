@@ -1,0 +1,43 @@
+@import "../components/app";
+
+.tabBar-empty {
+  height: 1.9rem;
+}
+
+.tabBar {
+  font-size: 0.5rem;
+  @include flex-row-between;
+  background-color: #ffffff;
+  border-top: 0.05rem solid $border-color;
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  height: 1.85rem;
+  li {
+    flex: 1;
+    a {
+      color: $dark-gray;
+      @include flex-column-center;
+      .icon-svg-menu {
+        width: 1.2rem;
+        height: 1.2rem;
+        fill: #adadad;
+      }
+      span {
+        @include scale(0.9);
+        transform-origin: center;
+        color: $dark-gray;
+        margin-top: -0.1rem;
+      }
+      &.active {
+        .icon-svg-menu {
+          fill: $red-color;
+        }
+        span {
+          color: $red-color;
+        }
+      }
+    }
+  }
+}
+

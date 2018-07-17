@@ -75,43 +75,7 @@ const goodsInfo = {
       id: 4,
       img: 'http://wx.wpart.cn/uploads/Q/Qdh4nAHglce5Bkn7PTKf/a/8/f/2/5b480e2033050.jpeg'
     }
-  ],
-  spec: {
-    color: [
-      {
-        id: 1,
-        color: '灰色+白色+黑色',
-        price: '129'
-      },
-      {
-        id: 2,
-        color: '红色+绿色+蓝色',
-        price: '119'
-      }
-    ],
-    size: [
-      {
-        id: 1,
-        name: 'S'
-      },
-      {
-        id: 2,
-        name: 'M'
-      },
-      {
-        id: 3,
-        name: 'L'
-      },
-      {
-        id: 4,
-        name: 'XL'
-      },
-      {
-        id: 5,
-        name: 'XXL'
-      }
-    ]
-  }
+  ]
 }
 
 class GoodsDetail extends React.Component {
@@ -122,6 +86,7 @@ class GoodsDetail extends React.Component {
       showSpec: false
     }
     this.changeExplainStatus = this.changeExplainStatus.bind(this)
+    this.changeSpecStatus = this.changeSpecStatus.bind(this)
   }
 
   changeExplainStatus () {
@@ -130,16 +95,22 @@ class GoodsDetail extends React.Component {
     }))
   }
 
+  changeSpecStatus () {
+    this.setState((prevState, props) => ({
+      showSpec: !prevState.showSpec
+    }))
+  }
+
   render () {
     const {showExplain, showSpec} = this.state
     return (
       <section className='goods-detail'>
         <Slider swiper={goodsInfo.swiper}/>
-        <Info info={goodsInfo} changeExplain={this.changeExplainStatus}/>
+        <Info info={goodsInfo} changeExplain={this.changeExplainStatus} changeSpec={this.changeSpecStatus}/>
         <Detail details={goodsInfo.details} />
         <Action/>
         {showExplain ? <Explain labels={goodsInfo.labels} change={this.changeExplainStatus}/> : ''}
-        {showSpec ? <SpecList/> : ''}
+        {showSpec ? <SpecList change={this.changeSpecStatus}/> : ''}
       </section>
     )
   }
