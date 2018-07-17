@@ -6,6 +6,7 @@ import Search from './Search'
 import Slider from './Slider'
 import Category from './Category'
 import List from './List'
+import Menu from '../../router/index'
 
 class Home extends React.Component {
   render () {
@@ -15,6 +16,7 @@ class Home extends React.Component {
         <Slider/>
         <Category/>
         <List/>
+        <Menu/>
       </section>
     )
   }

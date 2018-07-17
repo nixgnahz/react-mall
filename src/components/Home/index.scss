@@ -5,7 +5,7 @@
     @include gradient(right, #ff9000, #ff4f00);
     padding: 0.3rem 0px;
     @include flex-row-center;
-    p {
+    a {
       background-color: #ffffff;
       width: 80%;
       height: 1.4rem;

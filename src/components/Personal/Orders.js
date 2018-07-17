@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from "react-router-dom"
 
 import Icon from '../common/Icon'
 
@@ -8,10 +9,10 @@ class Orders extends React.Component {
       <div className="personal-order">
         <div className="personal-order-title">
           <span>我的订单</span>
-          <p className="personal-order-title-enter">
+          <Link to='./orders' className="personal-order-title-enter">
             <span>查看全部</span>
             <Icon icon="enter" size="smaller"/>
-          </p>
+          </Link>
         </div>
         <ul>
           <li>

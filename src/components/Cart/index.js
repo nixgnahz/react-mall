@@ -4,6 +4,7 @@ import Empty from './Empty'
 import Goods from './Goods'
 import Action from './Action'
 import Recommend from '../Recommend/index'
+import Menu from '../../router/index'
 
 import './index.scss'
 
@@ -167,6 +168,7 @@ class Cart extends React.Component {
       <section className="cart">
         {showEmpty ? <Empty/> : <div><Goods {...goodsData}/><Action {...actionData}/></div>}
         <Recommend/>
+        <Menu/>
       </section>
     )
   }
