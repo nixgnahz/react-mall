@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 
 import Icon from '../common/Icon'
 
@@ -18,7 +19,9 @@ class Info extends React.Component {
             <Icon icon='address' size='middle'/>
             <span>我的地址</span>
           </p>
-          <Icon icon='enter' size='smaller'/>
+          <Link to='./address'>
+            <Icon icon='enter' size='smaller'/>
+          </Link>
         </li>
         <li>
           <p>

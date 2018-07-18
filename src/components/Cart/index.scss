@@ -39,6 +39,9 @@
       font-size: 0.65rem;
       @include flex-row-center;
       line-height: 2rem;
+      &.disabled {
+        background-color: #adadad;
+      }
       span {
         @include right-triangle(#ffffff, 6px, 5px);
         margin-left: 0.25rem;

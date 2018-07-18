@@ -1,5 +1,7 @@
 import React from 'react'
 
+import {withRouter} from 'react-router-dom'
+
 const list = [
   {
     id: 1,
@@ -46,11 +48,20 @@ const list = [
 ]
 
 class List extends React.Component {
+  constructor(props) {
+    super(props)
+    this.showGoodsDetail = this.showGoodsDetail.bind(this)
+  }
+
+  showGoodsDetail (id) {
+    this.props.history.push('./detail/' + id)
+  }
+
   render () {
     return (
       <ul className='home-list'>
-        {list.map((item)=>
-          <li key={item.id}>
+        {list.map((item, index)=>
+          <li key={item.id} onClick={()=>this.showGoodsDetail(index)}>
             <div className='home-list-cover' style={{backgroundImage: 'url(' + item.cover + ')'}}></div>
             <p className='home-list-desc'>{item.desc}</p>
             <div className='home-list-info'>
@@ -64,4 +75,4 @@ class List extends React.Component {
   }
 }
 
-export default List
+export default withRouter(List)

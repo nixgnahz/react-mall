@@ -136,20 +136,26 @@ const allArr = [
 class Orders extends React.Component {
   constructor(props) {
     super(props)
+    let index = Number(this.props.match.params.id)
     this.state = {
-      activeIndex: 0,
-      orderArr: allArr
+      activeIndex: index,
+      orderArr: this.setList(index)
     }
-    this.changeNavBar = this.changeNavBar.bind(this)
-    this.setList = this.setList.bind(this)
   }
 
-  changeNavBar (index) {
-    if(this.state.activeIndex === index) return
+  componentWillReceiveProps (nextPorps) {
+    let index = Number(nextPorps.match.params.id)
     this.setState({
-      activeIndex: index
+      activeIndex: index,
+      orderArr: this.setList(index)
     })
-    this.setList(index)
+  }
+
+  shouldComponentUpdate (nextProps, nextState) {
+    if(nextState.activeIndex === this.state.activeIndex) {
+      return false
+    }
+    return true
   }
 
   setList (index) {
@@ -171,9 +177,7 @@ class Orders extends React.Component {
         arr = allArr
         break
     }
-    this.setState({
-      orderArr: arr
-    })
+    return arr
   }
 
   render () {

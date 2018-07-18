@@ -58,11 +58,13 @@
       @include flex-row-between;
       li {
         @include flex-1;
-        @include flex-column-center;
-        color: $dark-gray;
-        span {
-          margin-top: 0.1rem;
-          font-size: 0.5rem;
+        a {
+          @include flex-column-center;
+          color: $dark-gray;
+          span {
+            margin-top: 0.1rem;
+            font-size: 0.5rem;
+          }
         }
       }
     }

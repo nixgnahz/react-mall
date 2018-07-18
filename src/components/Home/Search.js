@@ -11,7 +11,6 @@ class Search extends React.Component {
           <Icon icon='search' size='small'/>
           <span>请输入商品名称</span>
         </Link>
-        <button>登录</button>
       </div>
     )
   }

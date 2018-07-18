@@ -1,4 +1,5 @@
 import React from 'react'
+import {NavLink} from "react-router-dom"
 
 const menus = [
   {
@@ -30,7 +31,9 @@ class NavBar extends React.Component {
       <div className="orders-navbar">
         <ul>
           {menus.map((item, index)=>
-            <li key={item.id} className={index === active ? 'active' : ''} onClick={()=> {change(index)}}>{item.name}</li>
+            <li key={item.id}>
+              <NavLink replace to={'/orders/' + index} exact activeClassName='active'>{item.name}</NavLink>
+            </li>
           )}
         </ul>
       </div>

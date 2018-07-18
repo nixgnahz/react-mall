@@ -21,20 +21,15 @@
         padding-left: 0.35rem;
       }
     }
-    button {
-      margin-left: 0.45rem;
-      color: #646567;
-      font-size: 0.6rem;
-    }
   }
   &-scroll {
     width: 100%;
     overflow: hidden;
+    background-color: #ffffff;
   }
   &-category {
     overflow: scroll;
     white-space: nowrap;
-    background-color: #ffffff;
     border-bottom: 1px solid $border-color;
     li {
       margin: 0.5rem 0.75rem 0.1rem;
