@@ -10,6 +10,12 @@ import Orders from './Orders/index'
 import Address from './Address/index'
 import GoodsDetail from './GoodsDetail/index'
 import OrderDetail from './OrderDetail/index'
+import Login from './Login/index'
+import Collect from './Collect/index'
+import ViewRecords from './ViewRecords/index'
+import Setting from './Setting/index'
+import Question from './Question/index'
+import Contact from './Contact/index'
 
 class App extends React.Component {
   render () {
@@ -25,6 +31,12 @@ class App extends React.Component {
           <Route path='/search' component={Search}/>
           <Route path='/detail/:id' component={GoodsDetail}/>
           <Route path='/order/:id' component={OrderDetail}/>
+          <Route path='/login' component={Login}/>
+          <Route path='/collect' component={Collect}/>
+          <Route path='/records' component={ViewRecords}/>
+          <Route path='/setting' component={Setting}/>
+          <Route path='/question' component={Question}/>
+          <Route path='/contact' component={Contact}/>
         </div>
       </Router>
     )

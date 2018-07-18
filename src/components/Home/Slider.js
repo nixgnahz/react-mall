@@ -1,34 +1,10 @@
 import React from 'react'
-import {withRouter} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 
 import Swiper from 'swiper'
 import 'swiper/dist/css/swiper.css'
 
-const swiper = [
-  {
-    id: 1,
-    cover: 'https://t00img.yangkeduo.com/t09img/images/2018-07-17/12cbb62b9ada2512ff7399defa0602c4.jpeg'
-  },
-  {
-    id: 2,
-    cover: 'https://t00img.yangkeduo.com/t02img/images/2018-07-17/739ec209ab0703688f1b06552d08a167.jpeg'
-  },
-  {
-    id: 3,
-    cover: 'https://t00img.yangkeduo.com/t01img/images/2018-07-16/7df735fc06224379188643157b7163aa.jpeg'
-  },
-  {
-    id: 4,
-    cover: 'https://t00img.yangkeduo.com/t10img/images/2018-07-15/6ffb686c00598a665b5323e4fa3eb1d7.jpeg'
-  }
-]
-
 class Slider extends React.Component {
-  constructor(props) {
-    super(props)
-    this.showGoodsDetail = this.showGoodsDetail.bind(this)
-  }
-
   componentDidMount() {
     new Swiper ('.swiper-container', {
       direction: 'horizontal',
@@ -39,18 +15,15 @@ class Slider extends React.Component {
     })
   }
 
-  showGoodsDetail (id) {
-    this.props.history.push('./detail/' + id)
-  }
-
   render () {
+    const {swiper} = this.props
     return (
       <div className="swiper-container">
       <div className="swiper-wrapper">
         {swiper.map((item, index)=>
-          <div className="swiper-slide" key={item.id}>
-            <img src={item.cover} alt="" onClick={()=>this.showGoodsDetail(index)}/>
-          </div>
+          <Link to={'./detail/' + item.id} className="swiper-slide" key={item.id}>
+            <img src={item.cover} alt=""/>
+          </Link>
         )}
         </div>
         <div className="swiper-pagination"></div>
@@ -59,4 +32,4 @@ class Slider extends React.Component {
   }
 }
 
-export default withRouter(Slider)
+export default Slider

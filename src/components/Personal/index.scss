@@ -76,7 +76,7 @@
     @include flex-row-between;
     font-size: 0.5rem;
     color: $dark-gray;
-    p {
+    a {
       @include flex-column-center;
       @include flex-1;
       span {
@@ -86,18 +86,21 @@
   }
   &-info {
     li {
-      @include flex-row-between;
-      background-color: #ffffff;
-      font-size: 0.6rem;
-      padding: 0.5rem 0.25rem;
-      border-top: 1px solid $border-color;
-      &:first-child {
+      &:first-child a {
         border-top: none;
       }
-      p {
-        @include flex-row-center;
-        span {
-          margin-left: 0.5rem;
+      a {
+        @include flex-row-between;
+        background-color: #ffffff;
+        font-size: 0.6rem;
+        padding: 0.5rem 0.25rem;
+        border-top: 1px solid $border-color;
+
+        p {
+          @include flex-row-center;
+          span {
+            margin-left: 0.5rem;
+          }
         }
       }
     }

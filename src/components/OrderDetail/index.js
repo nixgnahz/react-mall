@@ -47,6 +47,7 @@ class OrderDetail extends React.Component {
           <span>拨打商家电话</span>
         </button>
         <OrderInfo info={orderInfo}/>
+        <div className='order-detail-empty'></div>
         <Action/>
       </section>
     )

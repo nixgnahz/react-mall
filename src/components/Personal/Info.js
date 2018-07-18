@@ -8,34 +8,40 @@ class Info extends React.Component {
     return (
       <ul className="personal-info">
         <li>
-          <p>
-            <Icon icon='setting' size='middle'/>
-            <span>我的设置</span>
-          </p>
-          <Icon icon='enter' size='smaller'/>
-        </li>
-        <li>
-          <p>
-            <Icon icon='address' size='middle'/>
-            <span>我的地址</span>
-          </p>
-          <Link to='./address'>
+          <Link to='./setting'>
+            <p>
+              <Icon icon='setting' size='middle'/>
+              <span>我的设置</span>
+            </p>
             <Icon icon='enter' size='smaller'/>
           </Link>
         </li>
         <li>
-          <p>
-            <Icon icon='contact' size='middle'/>
-            <span>联系客服</span>
-          </p>
-          <Icon icon='enter' size='smaller'/>
+          <Link to='./address'>
+            <p>
+              <Icon icon='address' size='middle'/>
+              <span>我的地址</span>
+            </p>
+            <Icon icon='enter' size='smaller'/>
+          </Link>
         </li>
         <li>
-          <p>
-            <Icon icon='callback' size='middle'/>
-            <span>意见反馈</span>
-          </p>
-          <Icon icon='enter' size='smaller'/>
+          <Link to='./contact'>
+            <p>
+              <Icon icon='contact' size='middle'/>
+              <span>联系客服</span>
+            </p>
+            <Icon icon='enter' size='smaller'/>
+          </Link>
+        </li>
+        <li>
+          <Link to='./question'>
+            <p>
+              <Icon icon='question' size='middle'/>
+              <span>常见问题</span>
+            </p>
+            <Icon icon='enter' size='smaller'/>
+          </Link>
         </li>
       </ul>
     )

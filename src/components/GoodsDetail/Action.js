@@ -13,9 +13,9 @@ class Action extends React.Component {
         <div className='goods-detail-action-icon'>
           <Icon icon='collection' size='small'/>
         </div>
-        <div className='goods-detail-action-icon'>
+        <Link to='/cart' className='goods-detail-action-icon'>
           <Icon icon='cart' size='small'/>
-        </div>
+        </Link>
         <p className='goods-detail-action-btn btn1'>加入购物车</p>
         <p className='goods-detail-action-btn btn2'>立即购买</p>
       </div>
