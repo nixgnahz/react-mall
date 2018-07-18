@@ -1,8 +1,18 @@
 import React from 'react'
+import {withRouter} from 'react-router-dom'
 
 import Icon from '../common/Icon'
 
 class GoodsInfo extends React.Component {
+  constructor(props) {
+    super(props)
+    this.showGoodsDetail = this.showGoodsDetail.bind(this)
+  }
+
+  showGoodsDetail () {
+    this.props.history.push('/detail/0')
+  }
+
   render () {
     const {info} = this.props
     const money  = (info.price * info.num).toFixed(2)
@@ -14,7 +24,7 @@ class GoodsInfo extends React.Component {
           <Icon icon='shop' size='small'/>
           <span>{info.shop}</span>
         </p>
-        <div className='order-detail-goods-info'>
+        <div className='order-detail-goods-info' onClick={this.showGoodsDetail}>
           <div className='cover' style={{backgroundImage: 'url(' + info.cover + ')'}}></div>
           <div className='info'>
             <p>{info.name}</p>
@@ -35,4 +45,4 @@ class GoodsInfo extends React.Component {
   }
 }
 
-export default GoodsInfo
+export default withRouter(GoodsInfo)

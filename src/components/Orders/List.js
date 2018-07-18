@@ -1,18 +1,21 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 
 class List extends React.Component {
   render () {
     const {orders} = this.props
     return (
       <ul className="order-detail">
-        {orders.map((item)=>
+        {orders.map((item, index)=>
           <li key={item.id}>
-            <div className="order-list">
-              <ItemStatus value={item} />
-              <Item value={item} />
-              <ItemTotal value={item} />
-            </div>
-            <ItemAction value={item} />
+            <Link to={'/order/' + index}>
+              <div className="order-list">
+                <ItemStatus value={item} />
+                <Item value={item} />
+                <ItemTotal value={item} />
+              </div>
+              <ItemAction value={item} />
+            </Link>
           </li>
         )}
       </ul>

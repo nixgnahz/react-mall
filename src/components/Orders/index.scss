@@ -53,6 +53,9 @@
   .order-detail {
     font-size: 0.55rem;
     li {
+      a {
+        color: $dark-gray;
+      }
       background-color: #ffffff;
       margin: 0.5rem 0px;
       .order-list {

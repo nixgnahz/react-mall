@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 
 import Icon from '../common/Icon'
 
@@ -6,9 +7,9 @@ class Action extends React.Component {
   render () {
     return (
       <div className='goods-detail-action'>
-        <div className='goods-detail-action-icon'>
+        <Link replace to='/home' className='goods-detail-action-icon'>
           <Icon icon='home1' size='small'/>
-        </div>
+        </Link>
         <div className='goods-detail-action-icon'>
           <Icon icon='collection' size='small'/>
         </div>

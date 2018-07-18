@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 
 import Icon from '../common/Icon'
 
@@ -71,12 +72,14 @@ const ListItem = (data) => {
   const {item} = data
   return (
     <li>
-      <div className="cover" style={{backgroundImage: 'url(' + item.cover + ')'}}></div>
-      <p className="title">{item.title}</p>
-      <div className="param">
-        <p className="price">¥<span>{item.price}</span></p>
-        <p className="sales">已售{item.sales}件</p>
-      </div>
+      <Link to={'/detail/' + item.id}>
+        <div className="cover" style={{backgroundImage: 'url(' + item.cover + ')'}}></div>
+        <p className="title">{item.title}</p>
+        <div className="param">
+          <p className="price">¥<span>{item.price}</span></p>
+          <p className="sales">已售{item.sales}件</p>
+        </div>
+      </Link>
     </li>
   )
 }

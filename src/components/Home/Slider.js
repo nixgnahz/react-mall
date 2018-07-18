@@ -1,4 +1,5 @@
 import React from 'react'
+import {withRouter} from 'react-router-dom'
 
 import Swiper from 'swiper'
 import 'swiper/dist/css/swiper.css'
@@ -23,6 +24,11 @@ const swiper = [
 ]
 
 class Slider extends React.Component {
+  constructor(props) {
+    super(props)
+    this.showGoodsDetail = this.showGoodsDetail.bind(this)
+  }
+
   componentDidMount() {
     new Swiper ('.swiper-container', {
       direction: 'horizontal',
@@ -33,13 +39,17 @@ class Slider extends React.Component {
     })
   }
 
+  showGoodsDetail (id) {
+    this.props.history.push('./detail/' + id)
+  }
+
   render () {
     return (
       <div className="swiper-container">
       <div className="swiper-wrapper">
-        {swiper.map((item)=>
+        {swiper.map((item, index)=>
           <div className="swiper-slide" key={item.id}>
-            <img src={item.cover} alt=""/>
+            <img src={item.cover} alt="" onClick={()=>this.showGoodsDetail(index)}/>
           </div>
         )}
         </div>
@@ -49,4 +59,4 @@ class Slider extends React.Component {
   }
 }
 
-export default Slider
+export default withRouter(Slider)

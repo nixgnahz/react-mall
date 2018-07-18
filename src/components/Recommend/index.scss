@@ -19,6 +19,9 @@
       width: 49%;
       background-color: #ffffff;
       margin-bottom: 2%;
+      a {
+        color: $dark-gray;
+      }
       .cover {
         background-size: cover;
         width: 100%;

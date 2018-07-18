@@ -36,6 +36,7 @@ const orderInfo = {
 
 class OrderDetail extends React.Component {
   render () {
+    const orderId = this.props.match.params.id
     return (
       <section className='order-detail'>
         <Status info={orderInfo}/>

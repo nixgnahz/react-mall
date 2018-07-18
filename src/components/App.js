@@ -9,6 +9,7 @@ import Personal from './Personal/index'
 import Orders from './Orders/index'
 import Address from './Address/index'
 import GoodsDetail from './GoodsDetail/index'
+import OrderDetail from './OrderDetail/index'
 
 class App extends React.Component {
   render () {
@@ -23,6 +24,7 @@ class App extends React.Component {
           <Route path='/address' component={Address}/>
           <Route path='/search' component={Search}/>
           <Route path='/detail/:id' component={GoodsDetail}/>
+          <Route path='/order/:id' component={OrderDetail}/>
         </div>
       </Router>
     )
