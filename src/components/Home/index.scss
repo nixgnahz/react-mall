@@ -2,53 +2,58 @@
 
 .home {
   &-search {
-    @include gradient(right, #ff9000, #ff4f00);
-    padding: 0.3rem 0px;
+    padding: 0.5rem;
     @include flex-row-center;
+    background-color: #ffffff;
+    font-size: 0.5rem;
     a {
-      background-color: #ffffff;
-      width: 80%;
+      @include flex-1;
+      color: #646567;
+      background-color: #ededed;
       height: 1.4rem;
       line-height: 1.4rem;
-      @include radius(0.7rem);
-      margin: 0px 10%;
-      font-size: 0.5rem;
-      padding: 0px 0.25rem;
+      @include radius(0.2rem);
       @include flex;
       @include flex-row;
       align-items: center;
-      color: $dark-gray;
+      padding: 0px 0.25rem;
       span {
-        margin-left: 0.25rem;
+        padding-left: 0.35rem;
+      }
+    }
+    button {
+      margin-left: 0.45rem;
+      color: #646567;
+      font-size: 0.6rem;
+    }
+  }
+  &-scroll {
+    width: 100%;
+    overflow: hidden;
+  }
+  &-category {
+    overflow: scroll;
+    white-space: nowrap;
+    background-color: #ffffff;
+    border-bottom: 1px solid $border-color;
+    li {
+      margin: 0.5rem 0.75rem 0.1rem;
+      padding-bottom: 0.3rem;
+      display: inline-block;
+      text-align: center;
+      font-size: 0.5rem;
+      color: $dark-gray;
+      border-bottom: 0.1rem solid transparent;
+      &.active {
+        border-bottom: 0.1rem solid $red-color;
       }
     }
   }
   .swiper-container {
     font-size: 0px;
+    margin-bottom: 0.5rem;
     img {
       width: 100%;
-    }
-  }
-  &-category {
-    @include flex-row-between;
-    @include flex-wrap;
-    margin-bottom: 0.5rem;
-    background-color: #ffffff;
-    li {
-      width: 20%;
-      @include flex-column-center;
-      margin: 0.35rem 0px;
-      img {
-        width: 2rem;
-        height: 2rem;
-        @include radius;
-      }
-      p {
-        font-size: 0.5rem;
-        color: $dark-gray;
-        @include scale(0.9);
-        transform-origin: center;
-      }
     }
   }
   &-list {

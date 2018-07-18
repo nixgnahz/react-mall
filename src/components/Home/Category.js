@@ -3,67 +3,71 @@ import React from 'react'
 const categoryArr = [
   {
     id: 1,
-    cover: 'http://wx.wpart.cn/uploads/Q/Qdh4nAHglce5Bkn7PTKf/f/1/5/f/5b49aa09d4552.png',
-    name: '品牌特卖'
+    name: '热门'
   },
   {
     id: 2,
-    cover: 'http://wx.wpart.cn/uploads/Q/Qdh4nAHglce5Bkn7PTKf/f/1/5/f/5b49aa09d4552.png',
-    name: '女装'
+    name: '服饰'
   },
   {
     id: 3,
-    cover: 'http://wx.wpart.cn/uploads/Q/Qdh4nAHglce5Bkn7PTKf/f/1/5/f/5b49aa09d4552.png',
-    name: '上衣'
+    name: '鞋包'
   },
   {
     id: 4,
-    cover: 'http://wx.wpart.cn/uploads/Q/Qdh4nAHglce5Bkn7PTKf/f/1/5/f/5b49aa09d4552.png',
-    name: '男装'
+    name: '母婴'
   },
   {
     id: 5,
-    cover: 'http://wx.wpart.cn/uploads/Q/Qdh4nAHglce5Bkn7PTKf/f/1/5/f/5b49aa09d4552.png',
-    name: '内衣'
+    name: '百货'
   },
   {
     id: 6,
-    cover: 'http://wx.wpart.cn/uploads/Q/Qdh4nAHglce5Bkn7PTKf/f/1/5/f/5b49aa09d4552.png',
-    name: '美妆护理'
+    name: '食品'
   },
   {
     id: 7,
-    cover: 'http://wx.wpart.cn/uploads/Q/Qdh4nAHglce5Bkn7PTKf/f/1/5/f/5b49aa09d4552.png',
-    name: '女鞋'
+    name: '内衣'
   },
   {
     id: 8,
-    cover: 'http://wx.wpart.cn/uploads/Q/Qdh4nAHglce5Bkn7PTKf/f/1/5/f/5b49aa09d4552.png',
-    name: '男鞋'
+    name: '家电'
   },
   {
     id: 9,
-    cover: 'http://wx.wpart.cn/uploads/Q/Qdh4nAHglce5Bkn7PTKf/f/1/5/f/5b49aa09d4552.png',
-    name: '女鞋'
+    name: '手表'
   },
   {
     id: 10,
-    cover: 'http://wx.wpart.cn/uploads/Q/Qdh4nAHglce5Bkn7PTKf/f/1/5/f/5b49aa09d4552.png',
-    name: '男鞋'
+    name: '家具'
   }
 ]
 
 class Category extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      activeIndex: 0
+    }
+    this.changeMenu = this.changeMenu.bind(this)
+  }
+
+  changeMenu (index) {
+    this.setState({
+      activeIndex: index
+    })
+  }
+
   render () {
+    const {activeIndex} = this.state
     return (
-      <ul className='home-category'>
-        {categoryArr.map((item)=>
-          <li key={item.id}>
-            <img src={item.cover} alt=''/>
-            <p>{item.name}</p>
-          </li>
-        )}
-      </ul>
+      <div className='home-scroll'>
+        <ul className='home-category'>
+          {categoryArr.map((item, index)=>
+            <li key={item.id} className={index == activeIndex ? 'active' : 'inactive'} onClick={()=> this.changeMenu(index)}>{item.name}</li>
+          )}
+        </ul>
+      </div>
     )
   }
 }

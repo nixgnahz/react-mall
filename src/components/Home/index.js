@@ -13,8 +13,8 @@ class Home extends React.Component {
     return (
       <section className='home'>
         <Search/>
-        <Slider/>
         <Category/>
+        <Slider/>
         <List/>
         <Menu/>
       </section>
