@@ -20,14 +20,14 @@ class Toast extends React.Component {
   componentDidMount () {
     this.timer = setTimeout(()=> {
       this.props.hideToast()
-    }, 1000)
+    }, 1500)
   }
 
   render () {
     const {toast} = this.props
     return (
       <div className="toast-container">
-        <div className="toast dark">{toast}</div>
+        <div className="toast">{toast}</div>
       </div>
     )
   }

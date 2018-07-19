@@ -17,25 +17,45 @@ class Orders extends React.Component {
         <ul>
           <li>
             <Link to='./orders/1'>
-              <Icon icon="daifukuan" size='middle'/>
+              <div>
+                <p>
+                  <span>5</span>
+                </p>
+                <Icon icon="daifukuan" size='middle'/>
+              </div>
               <span>待付款</span>
             </Link>
           </li>
           <li>
             <Link to='./orders/2'>
-              <Icon icon="daifahuo" size='middle'/>
+              <div>
+                <p>
+                  <span>5</span>
+                </p>
+                <Icon icon="daifahuo" size='middle'/>
+              </div>
               <span>待发货</span>
             </Link>
           </li>
           <li>
             <Link to='./orders/3'>
-              <Icon icon="nogoods" size='middle'/>
+              <div>
+                <p>
+                  <span>5</span>
+                </p>
+                <Icon icon="nogoods" size='middle'/>
+              </div>
               <span>待收获</span>
             </Link>
           </li>
           <li>
             <Link to='./orders/4'>
-              <Icon icon="daipingjia" size='middle'/>
+              <div>
+                <p>
+                  <span>5</span>
+                </p>
+                <Icon icon="daipingjia" size='middle'/>
+              </div>
               <span>待评价</span>
             </Link>
           </li>
