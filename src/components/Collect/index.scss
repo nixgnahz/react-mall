@@ -1,0 +1,41 @@
+@import "../app";
+
+.collect {
+  background-color: #ffffff;
+  &-list {
+    @include flex-row-between;
+    font-size: 0.55rem;
+    padding: 0.5rem;
+    border-bottom: 1px solid $border-color;
+    position: relative;
+    &-cover {
+      width: 3.5rem;
+      height: 3.5rem;
+      @include cover;
+    }
+    &-info {
+      flex: 1;
+      margin-left: 0.5rem;
+      height: 3.5rem;
+      @include flex;
+      @include flex-column;
+      justify-content: space-between;
+      &-title {
+        @include multiline-text-overflow;
+      }
+      &-sales {
+        @include scale(0.85);
+        transform-origin: left;
+      }
+      &-price {
+        color: $red-color;
+      }
+    }
+    &-action {
+      position: absolute;
+      right: 0.5rem;
+      bottom: 0.5rem;
+      font-size: 0px;
+    }
+  }
+}

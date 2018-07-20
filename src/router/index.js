@@ -11,6 +11,11 @@ const tabBar = [
     icon: 'homefill'
   },
   {
+    name: "分类",
+    path: "/classify",
+    icon: 'classifyfill'
+  },
+  {
     name: "购物车",
     path: "/cart",
     icon: 'cartfill'

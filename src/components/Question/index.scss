@@ -1,0 +1,36 @@
+@import '../app';
+
+.question {
+  font-size: 0.6rem;
+  color: $dark-gray;
+  &-title {
+    font-weight: 800;
+    padding: 0.5rem;
+    @include flex;
+    @include flex-row;
+    align-items: center;
+    p {
+      &:first-child {
+        border-left: 2px solid $red-color;
+        padding-left: 0.5rem;
+        height: 0.6rem;
+      }
+    }
+  }
+  &-list {
+    &-title {
+      padding: 0.4rem;
+      @include flex-row-between;
+      background-color: #ffffff;
+      border-bottom: 1px solid $border-color;
+    }
+    &-desc {
+      font-size: 0.5rem;
+      padding: 0.5rem;
+      line-height: 1rem;
+    }
+    &:last-child &-title {
+      border-bottom: none;
+    }
+  }
+}

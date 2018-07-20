@@ -3,9 +3,10 @@ import React from 'react'
 import {BrowserRouter as Router, Route, Redirect} from "react-router-dom"
 
 import Home from './Home/index'
-import Search from './Search/index'
+import Classify from './Classify/index'
 import Cart from './Cart/index'
 import Personal from './Personal/index'
+import Search from './Search/index'
 import Orders from './Orders/index'
 import Address from './Address/index'
 import GoodsDetail from './GoodsDetail/index'
@@ -24,6 +25,7 @@ class App extends React.Component {
         <div>
           <Route exact path='/' render={() =><Redirect to='/home'/>}/>
           <Route path='/home' component={Home}/>
+          <Route path='/classify' component={Classify}/>
           <Route path='/cart' component={Cart}/>
           <Route path='/person' component={Personal}/>
           <Route path='/orders/:id' component={Orders}/>

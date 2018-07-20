@@ -1,0 +1,45 @@
+@import "../app";
+
+.contact {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  font-size: 0.65rem;
+  &-qrCode {
+    margin: 2.5rem auto 0.5rem;
+    text-align: center;
+    img {
+      width: 11rem;
+      height: 11rem;
+    }
+  }
+  &-info {
+    text-align: center;
+    &-tel {
+      @include flex-row-center;
+      margin-bottom: 0.75rem;
+      span {
+        color: $red-color;
+        margin-left: 0.25rem;
+      }
+    }
+    &-tip {
+      font-size: 0.5rem;
+      color: $light-gray;
+    }
+  }
+  &-question {
+    width: 100%;
+    position: absolute;
+    bottom: 2rem;
+    font-size: 0.5rem;
+    text-decoration: underline;
+    text-align: center;
+    a {
+      color: $light-gray;
+    }
+  }
+}
