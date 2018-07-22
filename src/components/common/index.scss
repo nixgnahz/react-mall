@@ -83,7 +83,55 @@
     margin: 0 auto;
     border-radius: 0.1rem;
     display: inline-block;
-    background-color: rgba(0,0,0,0.7);
+    background-color: rgba(0, 0, 0, 0.7);
     color: #fff;
+  }
+}
+
+.modal-container {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  box-sizing: border-box;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .modal {
+    background: #fff;
+    border-radius: 0.15rem;
+    width: 12rem;
+    .title {
+      color: #333;
+      font-weight: 500;
+      font-size: 0.8rem;
+      padding-top: 0.75rem;
+    }
+    .desc {
+      color: #666;
+      font-size: 0.6rem;
+      margin: 0.75rem 0px;
+    }
+    .btns {
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+      color: #44b549;
+      font-weight: 400;
+      justify-content: center;
+      border-top: 1px solid #ebebeb;
+      p {
+        flex: 1;
+        padding: 0.5rem 0px;
+        font-size: 0.7rem;
+        &:last-child {
+          border-left: 1px solid #ebebeb;
+        }
+      }
+    }
   }
 }

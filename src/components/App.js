@@ -17,6 +17,9 @@ import ViewRecords from './ViewRecords/index'
 import Setting from './Setting/index'
 import Question from './Question/index'
 import Contact from './Contact/index'
+import Feedback from './Feedback/index'
+import SignUp from './SignUp/index'
+import About from './About/index'
 
 class App extends React.Component {
   render () {
@@ -39,6 +42,9 @@ class App extends React.Component {
           <Route path='/setting' component={Setting}/>
           <Route path='/question' component={Question}/>
           <Route path='/contact' component={Contact}/>
+          <Route path='/feedback' component={Feedback}/>
+          <Route path='/signup' component={SignUp}/>
+          <Route path='/about' component={About}/>
         </div>
       </Router>
     )

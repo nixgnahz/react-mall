@@ -1,0 +1,24 @@
+@import "../app";
+
+.setting {
+  &-list {
+    background-color: #ffffff;
+    font-size: 0.6rem;
+    &-item {
+      a {
+        padding: 0.5rem;
+        @include flex-row-between;
+        border-bottom: 1px solid $border-color;
+      }
+    }
+  }
+  &-action {
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+    background: linear-gradient(to right, #ff8c00, #ff5600);
+    color: #ffffff;
+    height: 1.8rem;
+    font-size: 0.6rem;
+  }
+}

@@ -14,7 +14,7 @@ class Modal extends React.Component {
   render () {
     const {showCancel, title, desc, makeCancel, makeSure} = this.props
     return (
-      <div className="float-mask modal-box">
+      <div className="float-mask modal-container">
         <div className="modal">
           <p className="title">{title}</p>
           <p className="desc">{desc}</p>
