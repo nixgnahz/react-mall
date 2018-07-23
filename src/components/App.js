@@ -18,8 +18,9 @@ import Setting from './Setting/index'
 import Question from './Question/index'
 import Contact from './Contact/index'
 import Feedback from './Feedback/index'
-import SignUp from './SignUp/index'
+import UserInfo from './UserInfo/index'
 import About from './About/index'
+import Certification from './Certification/index'
 
 class App extends React.Component {
   render () {
@@ -43,8 +44,9 @@ class App extends React.Component {
           <Route path='/question' component={Question}/>
           <Route path='/contact' component={Contact}/>
           <Route path='/feedback' component={Feedback}/>
-          <Route path='/signup' component={SignUp}/>
+          <Route path='/userinfo' component={UserInfo}/>
           <Route path='/about' component={About}/>
+          <Route path='/certification' component={Certification}/>
         </div>
       </Router>
     )

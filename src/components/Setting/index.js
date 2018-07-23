@@ -48,17 +48,25 @@ class Setting extends React.Component {
       <section className='setting'>
         <div className='setting-list'>
           <div className='setting-list-item'>
+            <Link to='./userinfo'>
+              <p>个人信息管理</p>
+              <Icon icon='enter'/>
+            </Link>
+            </div>
+          <div className='setting-list-item'>
             <Link to='./address'>
               <p>地址管理</p>
               <Icon icon='enter'/>
             </Link>
           </div>
           <div className='setting-list-item'>
-            <Link to='./about'>
-              <p>关于我们</p>
+            <Link to='./certification'>
+              <p>实名认证</p>
               <Icon icon='enter'/>
             </Link>
           </div>
+        </div>
+        <div className='setting-list'>
           <div className='setting-list-item'>
             <Link to='./feedback'>
               <p>问题反馈</p>
@@ -68,6 +76,12 @@ class Setting extends React.Component {
           <div className='setting-list-item'>
             <Link to='./question'>
               <p>常见问题</p>
+              <Icon icon='enter'/>
+            </Link>
+          </div>
+          <div className='setting-list-item'>
+            <Link to='./about'>
+              <p>关于我们</p>
               <Icon icon='enter'/>
             </Link>
           </div>

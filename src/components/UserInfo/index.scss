@@ -1,0 +1,83 @@
+@import "../app";
+
+.userinfo {
+  font-size: 0.6rem;
+  &-list {
+    background-color: #ffffff;
+    &-item {
+      padding: 0.5rem;
+      @include flex-row-between;
+      border-bottom: 1px solid $border-color;
+      p {
+        @include flex-row-center;
+        img {
+          width: 2.5rem;
+          height: 2.5rem;
+          @include radius;
+          margin-right: 0.5rem;
+        }
+        span {
+          margin-right: 0.5rem;
+        }
+      }
+    }
+  }
+  &-float {
+    @include flex-row-center;
+  }
+  &-change {
+    width: 85%;
+    @include radius(0.1rem);
+    background-color: #ffffff;
+    &-title {
+      padding: 0.5rem;
+      border-bottom: 2px solid $border-color;
+    }
+    &-list {
+      p {
+        @include flex;
+        @include flex-row;
+        align-items: center;
+        padding: 0.4rem 0.5rem;
+        border-bottom: 1px solid $border-color;
+        &:last-child {
+          border: none;
+        }
+        span {
+          margin-left: 0.25rem;
+        }
+      }
+    }
+  }
+  &-input {
+    width: 85%;
+    margin: 0rem 7.5%;
+    padding: 0.5rem;
+    background-color: #ffffff;
+    @include radius(0.1rem);
+    input {
+      width: 100%;
+      padding: 0px 0.5rem;
+      height: 2rem;
+      border-bottom: 1px solid $border-color;
+      background-color: #ffffff;
+      @include radius(0.1rem);
+    }
+    &-action {
+      background: linear-gradient(to right, #ff8c00, #ff5600);
+      color: #ffffff;
+      justify-content: center;
+      height: 1.6rem;
+      @include radius(0.1rem);
+      @include flex-row-center;
+      margin: 0.75rem 0px;
+      letter-spacing: 0.1rem;
+    }
+    &-tip {
+      padding: 0px 0.5rem;
+      @include scale(0.8);
+      transform-origin: left;
+      color: $light-gray;
+    }
+  }
+}
