@@ -1,0 +1,87 @@
+@import "../app";
+
+.feedback {
+  font-size: 0.6rem;
+  &-desc {
+    background-color: #ffffff;
+    padding: 0.5rem;
+    &-tip {
+      @include flex-row-between;
+      color: $light-gray;
+      font-size: 0.5rem;
+    }
+    textarea {
+      width: 100%;
+      height: 5rem;
+      outline: none;
+      border: none;
+      resize: none;
+      margin: 0.75rem 0px;
+    }
+    &-cover {
+      @include flex;
+      @include flex-row;
+      @include flex-wrap;
+      p {
+        width: 2.3rem;
+        height: 2.3rem;
+        margin-right: 0.5rem;
+        margin-bottom: 0.5rem;
+        @include cover;
+        position: relative;
+      }
+      &-close {
+        position: absolute;
+        right: -0.2rem;
+        top: -0.2rem;
+        width: 0.8rem;
+        height: 0.8rem;
+        background-color: #adadad;
+        color: #ffffff;
+        font-size: 0.5rem;
+        line-height: 0.8rem;
+        text-align: center;
+        font-weight: 400;
+        @include radius;
+      }
+    }
+    &-upload {
+      @include flex-column-center;
+      justify-content: center;
+      border: 1px dashed $border-color;
+      span {
+        font-size: 0.5rem;
+        @include scale(0.85);
+        transform-origin: center;
+        margin-top: 0.1rem;
+      }
+    }
+  }
+  &-tel {
+    margin: 0.5rem 0px;
+    padding: 0px 0.5rem;
+    background-color: #ffffff;
+    @include flex-row-between;
+    input {
+      margin-left: 0.75rem;
+      height: 1.8rem;
+      @include flex-1;
+    }
+  }
+  &-action {
+    font-size: 0.65rem;
+    letter-spacing: 0.1rem;
+    background-color: $red-color;
+    color: #ffffff;
+    width: 90%;
+    height: 1.7rem;
+    line-height: 1.7rem;
+    margin: 1rem auto 0px;
+    text-align: center;
+    @include radius(0.1rem);
+    &.disabled {
+      background-color: #e0e0e0;
+      color: #9c9c9c;
+    }
+  }
+}
