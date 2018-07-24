@@ -46,7 +46,7 @@ class App extends React.Component {
           <Route path='/feedback' component={Feedback}/>
           <Route path='/userinfo' component={UserInfo}/>
           <Route path='/about' component={About}/>
-          <Route path='/goods' component={GoodsList}/>
+          <Route path='/goods/:id' component={GoodsList}/>
         </section>
       </Router>
     )
