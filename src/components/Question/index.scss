@@ -3,6 +3,9 @@
 .question {
   font-size: 0.6rem;
   color: $dark-gray;
+  ul {
+    margin-bottom: 1rem;
+  }
   &-title {
     font-weight: 800;
     padding: 0.5rem;

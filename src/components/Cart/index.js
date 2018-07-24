@@ -11,7 +11,7 @@ import './index.scss'
 const goods = [
   {
     id: 1,
-    cover: 'http://wx.wpart.cn/uploads/Q/Qdh4nAHglce5Bkn7PTKf/a/8/f/2/5b480e2033050.jpeg',
+    cover: 'http://y1y-src.oss-cn-shanghai.aliyuncs.com/uploads/Q/Qdh4nAHglce5Bkn7PTKf/a/8/f/2/5b480e2033050.jpeg',
     name: '粗跟漏趾凉鞋女百搭2018夏季新款韩版时尚一字扣带女鞋',
     param: {
       color: '米色',
@@ -23,7 +23,7 @@ const goods = [
   },
   {
     id: 2,
-    cover: 'http://wx.wpart.cn/uploads/Q/Qdh4nAHglce5Bkn7PTKf/f/d/b/6/5b480e18a57f4.jpeg',
+    cover: 'http://y1y-src.oss-cn-shanghai.aliyuncs.com/uploads/Q/Qdh4nAHglce5Bkn7PTKf/f/d/b/6/5b480e18a57f4.jpeg',
     name: '2017夏季新款韩版宽松收腰显廋短袖牛仔连衣裙女中长款休闲长裙',
     param: {
       color: '浅蓝色',
@@ -35,7 +35,7 @@ const goods = [
   },
   {
     id: 3,
-    cover: 'http://wx.wpart.cn/uploads/Q/Qdh4nAHglce5Bkn7PTKf/4/0/6/a/5b480e10dbac3.jpeg',
+    cover: 'http://y1y-src.oss-cn-shanghai.aliyuncs.com/uploads/Q/Qdh4nAHglce5Bkn7PTKf/4/0/6/a/5b480e10dbac3.jpeg',
     name: '2018夏季男士短袖T恤休闲潮流圆领T恤汗衫男装套头男生外套衣服',
     param: {
       color: '909短袖灰色',
@@ -47,7 +47,7 @@ const goods = [
   },
   {
     id: 4,
-    cover: 'http://wx.wpart.cn/uploads/Q/Qdh4nAHglce5Bkn7PTKf/d/c/9/9/5b481040c7f32.jpeg',
+    cover: 'http://y1y-src.oss-cn-shanghai.aliyuncs.com/uploads/Q/Qdh4nAHglce5Bkn7PTKf/d/c/9/9/5b481040c7f32.jpeg',
     name: '红米Note5-AI双摄，千元全面屏，红米Note5-AI双摄，千元全面屏，红米Note5-AI双摄',
     param: {
       color: '金色',
@@ -167,7 +167,9 @@ class Cart extends React.Component {
     return(
       <section className="cart">
         {showEmpty ? <Empty/> : <div><Goods {...goodsData}/><Action {...actionData}/></div>}
-        <Recommend/>
+        <div style={{marginBottom: '2rem'}}>
+          <Recommend/>
+        </div>
         <Menu/>
       </section>
     )

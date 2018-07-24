@@ -142,21 +142,21 @@ class Question extends React.Component {
     return (
       <section className='question'>
         <ul>
-        {questionArr.map((it)=>
-          <li key={it.content.id}>
+        {questionArr.map((it, idx)=>
+          <li key={idx}>
             <div className='question-title'>
               <p></p>
               <p>{it.title}</p>
             </div>
-            {it.content.map((item)=>
-              <div className='question-list' key={item.id} onClick={()=> {this.changeQuestion(item.id)}}>
+            {it.content.map((itm)=>
+              <div key={itm.id} className='question-list' key={itm.id} onClick={()=> {this.changeQuestion(itm.id)}}>
                 <p className='question-list-title'>
-                  <span>{item.title}</span>
-                  <Icon icon={activeId == item.id ? 'up' : 'down'} size='smaller'/>
+                  <span>{itm.title}</span>
+                  <Icon icon={activeId == itm.id ? 'up' : 'down'} size='smaller'/>
                 </p>
-                <div className='question-list-desc' style={{display: activeId == item.id ? 'block' : 'none'}}>
-                {item.desc.map((itm,index)=>
-                  <p key={index}>● {itm}</p>
+                <div className='question-list-desc' style={{display: activeId == itm.id ? 'block' : 'none'}}>
+                {itm.desc.map((item, index)=>
+                  <p key={index}>● {item}</p>
                 )}
               </div>
             </div>
@@ -164,7 +164,6 @@ class Question extends React.Component {
           </li>
         )}
         </ul>
-
       </section>
     )
   }

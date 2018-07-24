@@ -9,7 +9,7 @@ class SpecList extends React.Component {
       <div className='float-mask'>
         <div className='goods-detail-spec'>
           <div className='goods-detail-spec-info'>
-            <div className='goods-detail-spec-info-cover' style={{backgroundImage: 'url(http://wx.wpart.cn/uploads/Q/Qdh4nAHglce5Bkn7PTKf/3/4/4/d/5b49aa016c765.png)'}}></div>
+            <div className='goods-detail-spec-info-cover' style={{backgroundImage: 'url(http://y1y-src.oss-cn-shanghai.aliyuncs.com/uploads/Q/Qdh4nAHglce5Bkn7PTKf/3/4/4/d/5b49aa016c765.png)'}}></div>
             <div className='goods-detail-spec-info-price'>
               <p>¥45</p>
               <p>库存4923</p>

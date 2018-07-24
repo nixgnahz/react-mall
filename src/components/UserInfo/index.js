@@ -14,7 +14,7 @@ class UserInfo extends React.Component {
     this.state = {
       sex: '保密',
       name: 'jd_1886182z',
-      portrait: 'http://wx.wpart.cn/uploads/Q/Qdh4nAHglce5Bkn7PTKf/d/4/e/0/5b3db4fd3eab9.jpeg',
+      portrait: 'http://y1y-src.oss-cn-shanghai.aliyuncs.com/uploads/Q/Qdh4nAHglce5Bkn7PTKf/d/4/e/0/5b3db4fd3eab9.jpeg',
       showPortrait: false,
       showName: false,
       showSex: false

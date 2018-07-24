@@ -49,19 +49,13 @@ class Setting extends React.Component {
         <div className='setting-list'>
           <div className='setting-list-item'>
             <Link to='./userinfo'>
-              <p>个人信息管理</p>
+              <p>账号管理</p>
               <Icon icon='enter'/>
             </Link>
             </div>
           <div className='setting-list-item'>
             <Link to='./address'>
               <p>地址管理</p>
-              <Icon icon='enter'/>
-            </Link>
-          </div>
-          <div className='setting-list-item'>
-            <Link to='./certification'>
-              <p>实名认证</p>
               <Icon icon='enter'/>
             </Link>
           </div>

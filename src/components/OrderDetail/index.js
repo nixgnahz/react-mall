@@ -14,7 +14,7 @@ const orderInfo = {
   shop: '小米手机商城',
   statusCode: 0,
   status: '待支付',
-  cover: 'http://wx.wpart.cn/uploads/Q/Qdh4nAHglce5Bkn7PTKf/a/8/f/2/5b480e2033050.jpeg',
+  cover: 'http://y1y-src.oss-cn-shanghai.aliyuncs.com/uploads/Q/Qdh4nAHglce5Bkn7PTKf/a/8/f/2/5b480e2033050.jpeg',
   name: '粗跟漏趾凉鞋女百搭2018夏季新款韩版时尚一字扣带女鞋',
   param: {
     color: '金色',

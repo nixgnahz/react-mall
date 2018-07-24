@@ -8,42 +8,42 @@ import './index.scss'
 const recommendArr = [
   {
     id: 1,
-    cover: 'http://wx.wpart.cn/uploads/Q/Qdh4nAHglce5Bkn7PTKf/c/4/6/6/5b3de734c20e0.jpeg',
+    cover: 'http://y1y-src.oss-cn-shanghai.aliyuncs.com/uploads/Q/Qdh4nAHglce5Bkn7PTKf/c/4/6/6/5b3de734c20e0.jpeg',
     title: '抹茶酵素梅 快速减肚腩 通便排毒 减肥瘦身 月月瘦200g',
     price: '39.9',
     sales: '53'
   },
   {
     id: 2,
-    cover: 'http://wx.wpart.cn/uploads/Q/Qdh4nAHglce5Bkn7PTKf/4/0/6/a/5b480e10dbac3.jpeg',
+    cover: 'http://y1y-src.oss-cn-shanghai.aliyuncs.com/uploads/Q/Qdh4nAHglce5Bkn7PTKf/4/0/6/a/5b480e10dbac3.jpeg',
     title: '抹茶酵素梅 快速减肚腩 通便排毒 减肥瘦身 月月瘦200g',
     price: '39.9',
     sales: '53'
   },
   {
     id: 3,
-    cover: 'http://wx.wpart.cn/uploads/Q/Qdh4nAHglce5Bkn7PTKf/f/d/b/6/5b480e18a57f4.jpeg',
+    cover: 'http://y1y-src.oss-cn-shanghai.aliyuncs.com/uploads/Q/Qdh4nAHglce5Bkn7PTKf/f/d/b/6/5b480e18a57f4.jpeg',
     title: '抹茶酵素梅 快速减肚腩 通便排毒 减肥瘦身 月月瘦200g',
     price: '39.9',
     sales: '53'
   },
   {
     id: 4,
-    cover: 'http://wx.wpart.cn/uploads/Q/Qdh4nAHglce5Bkn7PTKf/d/c/9/9/5b481040c7f32.jpeg',
+    cover: 'http://y1y-src.oss-cn-shanghai.aliyuncs.com/uploads/Q/Qdh4nAHglce5Bkn7PTKf/d/c/9/9/5b481040c7f32.jpeg',
     title: '抹茶酵素梅 快速减肚腩 通便排毒 减肥瘦身 月月瘦200g',
     price: '39.9',
     sales: '53'
   },
   {
     id: 5,
-    cover: 'http://wx.wpart.cn/uploads/Q/Qdh4nAHglce5Bkn7PTKf/c/4/6/6/5b3de734c20e0.jpeg',
+    cover: 'http://y1y-src.oss-cn-shanghai.aliyuncs.com/uploads/Q/Qdh4nAHglce5Bkn7PTKf/c/4/6/6/5b3de734c20e0.jpeg',
     title: '抹茶酵素梅 快速减肚腩 通便排毒 减肥瘦身 月月瘦200g',
     price: '39.9',
     sales: '53'
   },
   {
     id: 6,
-    cover: 'http://wx.wpart.cn/uploads/Q/Qdh4nAHglce5Bkn7PTKf/a/8/f/2/5b480e2033050.jpeg',
+    cover: 'http://y1y-src.oss-cn-shanghai.aliyuncs.com/uploads/Q/Qdh4nAHglce5Bkn7PTKf/a/8/f/2/5b480e2033050.jpeg',
     title: '抹茶酵素梅 快速减肚腩 通便排毒 减肥瘦身 月月瘦200g',
     price: '39.9',
     sales: '53'
