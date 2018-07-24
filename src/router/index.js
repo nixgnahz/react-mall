@@ -30,7 +30,7 @@ const tabBar = [
 class TabBar extends React.Component {
   render () {
     return (
-      <div>
+      <section>
         <div className="tabBar-empty"></div>
         <ul className="tabBar">
         {tabBar.map((route, index)=>
@@ -44,7 +44,7 @@ class TabBar extends React.Component {
           </li>
         )}
         </ul>
-      </div>
+      </section>
     )
   }
 }

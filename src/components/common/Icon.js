@@ -9,7 +9,7 @@ class Icon extends React.Component {
   }
 
   render () {
-    const {icon, size, color} = this.props
+    const {icon, size} = this.props
     return (
       <svg className={'icon-svg', 'icon-svg-' + size} aria-hidden="true">
         <use xlinkHref={'#icon-' + icon}></use>

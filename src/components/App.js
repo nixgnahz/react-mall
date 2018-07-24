@@ -20,12 +20,13 @@ import Contact from './Contact/index'
 import Feedback from './Feedback/index'
 import UserInfo from './UserInfo/index'
 import About from './About/index'
+import GoodsList from './GoodsList/index'
 
 class App extends React.Component {
   render () {
     return (
       <Router>
-        <div>
+        <section>
           <Route exact path='/' render={() =><Redirect to='/home'/>}/>
           <Route path='/home' component={Home}/>
           <Route path='/classify' component={Classify}/>
@@ -45,7 +46,8 @@ class App extends React.Component {
           <Route path='/feedback' component={Feedback}/>
           <Route path='/userinfo' component={UserInfo}/>
           <Route path='/about' component={About}/>
-        </div>
+          <Route path='/goods' component={GoodsList}/>
+        </section>
       </Router>
     )
   }

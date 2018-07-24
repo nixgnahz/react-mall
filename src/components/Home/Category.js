@@ -7,7 +7,7 @@ class Category extends React.Component {
       <div className='home-scroll'>
         <ul className='home-category'>
           {category.map((item, index)=>
-            <li key={item.id} className={index == activeIndex ? 'active' : 'inactive'} onClick={()=> change(index)}>{item.name}</li>
+            <li key={item.id} className={index === activeIndex ? 'active' : 'inactive'} onClick={()=> change(index)}>{item.name}</li>
           )}
         </ul>
       </div>

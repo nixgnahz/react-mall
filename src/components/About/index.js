@@ -13,7 +13,7 @@ class About extends React.Component {
     return (
       <section className='about'>
       {aboutArr.map((item, index)=>
-        <img src={item} key={index}/>
+        <img src={item} key={index} alt=''/>
       )}
         <p className='about-copyright'>
           <span>Copyright@2004-2018</span>
