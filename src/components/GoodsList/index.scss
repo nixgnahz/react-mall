@@ -1,0 +1,134 @@
+@import '../app';
+
+.goods {
+  font-size: 0.6rem;
+  &-head {
+    background-color: #ffffff;
+    @include flex-row-around;
+    padding: 0.45rem 0.25rem;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    z-index: 10;
+    div {
+      @include flex-row-center;
+      p {
+        margin-right: 0.2rem;
+        &:last-child {
+          @include flex-column-center;
+        }
+      }
+      .icon-svg-head {
+        width: 0.5rem;
+        height: 0.5rem;
+        fill: #adadad;
+      }
+      .icon-svg-rank {
+        width: 0.75rem;
+        height: 0.75rem;
+      }
+      &.active {
+        p {
+          color: $red-color;
+          &.asc {
+            .icon-asc {
+              fill: $red-color;
+            }
+          }
+          &.desc {
+            .icon-desc {
+              fill: $red-color;
+            }
+          }
+        }
+        .icon-sort {
+          fill: $red-color;
+        }
+      }
+    }
+  }
+  &-empty {
+    height: 1.9rem;
+    margin-bottom: 2%;
+  }
+  &-list {
+    @include flex-row-between;
+    @include flex-wrap;
+    font-size: 0.5rem;
+    .info {
+      &-content {
+        &-price {
+          color: $red-color;
+          font-weight: 700;
+          span {
+            display: inline-block;
+            @include scale(0.8);
+            margin-right: 0.1rem;
+          }
+        }
+        &-sales {
+          @include scale(0.85);
+          color: $light-gray;
+          transform-origin: left;
+        }
+      }
+    }
+    &.row {
+      li {
+        width: 49%;
+        background-color: #ffffff;
+        margin-bottom: 2%;
+        a {
+          color: $dark-gray;
+        }
+      }
+      .cover {
+        background-size: cover;
+        width: 100%;
+        height: 7rem;
+      }
+      .info {
+        &-title {
+          @include multiline-text-overflow;
+          margin: 0.5rem 0.25rem 0.25rem;
+        }
+        &-content {
+          @include flex-row-between;
+          margin: 0.25rem 0.25rem 0.5rem;
+        }
+      }
+    }
+    &.column {
+      background-color: #ffffff;
+      li {
+        padding: 0.35rem;
+        border-bottom: 1px solid $border-color;
+        a {
+          @include flex-row-between;
+        }
+        .cover {
+          width: 4rem;
+          height: 4.2rem;
+          @include cover;
+          margin-right: 0.5rem;
+        }
+        .info {
+          height: 4.2rem;
+          @include flex;
+          @include flex-column;
+          justify-content: space-between;
+          flex: 1;
+          &-title {
+            @include multiline-text-overflow;
+            font-size: 0.55rem;
+          }
+          &-content {
+            &-price {
+              margin-bottom: 0.1rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}

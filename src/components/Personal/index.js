@@ -1,4 +1,5 @@
 import React from 'react'
+import {withRouter} from 'react-router-dom'
 
 import Header from './Header'
 import Orders from './Orders'
@@ -9,6 +10,14 @@ import Menu from '../../router/index'
 import './index.scss'
 
 class Personal extends React.Component {
+  constructor(props) {
+    super(props)
+  }
+
+  componentDidMount () {
+    this.props.history.replace('/login')
+  }
+
   render () {
     return (
       <section className="personal">
@@ -23,4 +32,4 @@ class Personal extends React.Component {
   }
 }
 
-export default Personal
+export default withRouter(Personal)

@@ -1,0 +1,62 @@
+@import "../app";
+
+.classify {
+  @include flex;
+  @include flex-row;
+  justify-content: space-between;
+  font-size: 0.6rem;
+  &-menu {
+    width: 25%;
+    li {
+      text-align: center;
+      background-color: #f7f7f7;
+      padding: 0.5rem 0rem;
+      border-left: 0.15rem solid transparent;
+      &.active {
+        border-left: 0.15rem solid $red-color;
+        background-color: #ffffff;
+      }
+    }
+  }
+  &-content {
+    @include flex-1;
+    padding: 0.25rem 0.5rem;
+    background-color: #ffffff;
+    &-list {
+      &-title {
+        margin-top: 0.75rem;
+        @include flex-row-center;
+        &-line {
+          width: 1.5rem;
+          border-bottom: 1px solid $border-color;
+        }
+        p:nth-child(2) {
+          margin: 0px 0.5rem;
+        }
+      }
+      &-cover {
+        width: 2rem;
+        height: 2rem;
+        @include cover;
+      }
+      &-name {
+        width: 3rem;
+        @include scale(0.9);
+        @include text-overflow;
+        text-align: center;
+        margin-top: 0.25rem;
+      }
+      ul {
+        @include flex-row-between;
+        @include flex-wrap;
+        li {
+          margin-top: 0.75rem;
+          a {
+            font-size: 0.5rem;
+            @include flex-column-center;
+          }
+        }
+      }
+    }
+  }
+}

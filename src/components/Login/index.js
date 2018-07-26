@@ -17,17 +17,12 @@ class Login extends React.Component {
     this.showToast = this.showToast.bind(this)
   }
 
-  shouldComponentUpdate (nextProps, nextState) {
-    if(nextState.activeIndex == this.state.activeIndex) {
-      return false
-    }
-    return true
-  }
-
   changeActiveIndex (index) {
-    this.setState({
-      activeIndex: index
-    })
+    if(index != this.state.activeIndex) {
+      this.setState({
+        activeIndex: index
+      })
+    }
   }
 
   showToast (toast) {
@@ -46,7 +41,7 @@ class Login extends React.Component {
     const {activeIndex, toast} = this.state
     return (
       <section className='login'>
-        <img src='http://wx.wpart.cn/uploads/Q/Qdh4nAHglce5Bkn7PTKf/3/8/a/6/5b50448103280.png' />
+        <img src='http://wx.11babay.cn/uploads/Q/Qdh4nAHglce5Bkn7PTKf/3/8/a/6/5b50448103280.png' />
         <div className='login-menu'>
           <p className={activeIndex ? "inactive" : "active"} onClick={()=> {this.changeActiveIndex(0)}}>短信登录</p>
           <p className={!activeIndex ? "inactive" : "active"} onClick={()=> {this.changeActiveIndex(1)}}>密码登录</p>
