@@ -15,7 +15,7 @@ class Personal extends React.Component {
   }
 
   componentDidMount () {
-    this.props.history.replace('/login')
+    //this.props.history.replace('/login')
   }
 
   render () {

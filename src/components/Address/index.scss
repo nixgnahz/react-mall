@@ -186,13 +186,15 @@
       @include flex;
       @include flex-row;
       .scroll-mask {
-        width: 20%;
-        margin: 0px 2.5%;
+        width: 100%;
+        margin-left: 0.5rem;
         height: 350px;
         overflow: scroll;
         .level {
           li {
-            @include flex-row-center;
+            @include flex;
+            @include flex-row;
+            align-items: center;
             padding: 0.2rem 0px;
             span {
               margin-right: 0.25rem;
