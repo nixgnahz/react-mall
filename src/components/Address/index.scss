@@ -177,6 +177,7 @@
         width: 20%;
         margin: 0px 2.5%;
         border-bottom: 2px solid transparent;
+        @include text-overflow;
         &.active {
           border-bottom: 2px solid $red-color;
         }

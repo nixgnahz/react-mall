@@ -9,10 +9,18 @@ class Edit extends React.Component {
     super(props)
     this.state = {
       showLabel: false,
-      showSelect: false
+      showSelect: false,
+      name: '',
+      tel: '',
+      position: '',
+      positionId: 1,
+      address: '',
+      label: ''
     }
     this.changeLabelStatus = this.changeLabelStatus.bind(this)
     this.changeSelectStatus = this.changeSelectStatus.bind(this)
+    this.setPosition = this.setPosition.bind(this)
+    this.setLabel = this.setLabel.bind(this)
   }
 
   changeLabelStatus () {
@@ -27,8 +35,23 @@ class Edit extends React.Component {
     })
   }
 
+  setPosition (position, positionId) {
+    this.setState({
+      position: position,
+      positionId: positionId
+    })
+    this.changeSelectStatus()
+  }
+
+  setLabel (label) {
+    this.setState({
+      label: label
+    })
+    this.changeLabelStatus()
+  }
+
   render () {
-    const {showLabel, showSelect} = this.state
+    const {showLabel, showSelect, name, tel, position, address, label} = this.state
     return (
       <div className="address-edit">
         <ul className="address-edit-input">
@@ -42,8 +65,7 @@ class Edit extends React.Component {
           </li>
           <li onClick={this.changeSelectStatus}>
             <span>所在地区</span>
-            <Icon icon='enter' size='smaller'/>
-            <p>上海市闵行区莘庄镇</p>
+            {position ? <p>{position}</p> : <Icon icon='enter' size='smaller'/>}
           </li>
           <li>
             <textarea placeholder='请输入详细地址，如街道、门牌号、小区、楼栋号、单元室等'></textarea>
@@ -52,15 +74,14 @@ class Edit extends React.Component {
         <ul className="address-edit-input">
           <li onClick={this.changeLabelStatus}>
             <span>标签</span>
-            <Icon icon='enter' size='smaller'/>
-            <p>女朋友</p>
+            {label ? <p>{label}</p> : <Icon icon='enter' size='smaller'/>}
           </li>
         </ul>
         <button className="address-btn save">
           <span>保存</span>
         </button>
-        {showLabel ? <Label change={this.changeLabelStatus}/> : ''}
-        {showSelect ? <AddressSelect change={this.changeSelectStatus}/> : ''}
+        {showLabel ? <Label change={this.changeLabelStatus} setLabel={this.setLabel}/> : ''}
+        {showSelect ? <AddressSelect change={this.changeSelectStatus} setPosition={this.setPosition}/> : ''}
       </div>
     )
   }
