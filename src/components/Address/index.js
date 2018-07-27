@@ -1,5 +1,7 @@
 import React from 'react'
 
+import {getAddressList} from '../../api/address'
+
 import './index.scss'
 
 import Icon from '../common/Icon'
@@ -13,6 +15,14 @@ class Address extends React.Component {
       showEdit: false
     }
     this.changeEdit = this.changeEdit.bind(this)
+  }
+
+  componentDidMount () {
+    getAddressList().then((res)=> {
+      console.log(res)
+    }).catch((error)=> {
+      console.log(error)
+    })
   }
 
   changeEdit () {

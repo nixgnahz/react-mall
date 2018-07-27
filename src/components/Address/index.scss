@@ -171,6 +171,7 @@
       border-bottom: 1px solid $border-color;
       @include flex;
       @include flex-row;
+      height: 1.7rem;
       p {
         text-align: center;
         padding: 0.4rem 0rem;

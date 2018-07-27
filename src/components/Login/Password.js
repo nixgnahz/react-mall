@@ -1,4 +1,7 @@
 import React from 'react'
+import {withRouter} from 'react-router-dom'
+
+import {login} from '../../api/login'
 
 class Password extends React.Component {
   constructor(props) {
@@ -29,6 +32,14 @@ class Password extends React.Component {
       this.props.show('请输入密码')
       return
     }
+    login({
+      "account": this.state.username,
+      "password": this.state.password
+    }).then((res)=> {
+      this.props.history.replace('/person')
+    }).catch((error)=> {
+      this.props.show('登录失败')
+    })
   }
 
   getUsername (e) {
@@ -63,4 +74,4 @@ class Password extends React.Component {
   }
 }
 
-export default Password
+export default withRouter(Password)
