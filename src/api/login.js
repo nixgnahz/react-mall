@@ -1,9 +1,8 @@
-import axios from "axios";
-import url from "./common";
+import {api, instance} from "./common";
 
 export const login = (params)=> {
   return new Promise((resolve, reject)=> {
-    axios.post(url + '/user/login', params).then((res)=> {
+    instance.post(api.login, params).then((res)=> {
       resolve(res)
     }).catch((error)=> {
       reject(error)
@@ -13,7 +12,7 @@ export const login = (params)=> {
 
 export const logout = ()=> {
   return new Promise((resolve, reject)=> {
-    axios.post(url + '/user/logout').then((res)=> {
+    instance.post(api.logout).then((res)=> {
       resolve(res)
     }).catch((error)=> {
       reject(error)

@@ -1,9 +1,8 @@
-import axios from "axios"
-import url from "./common"
+import {api, instance} from "./common";
 
 const getPositionInfo = (prevId = 1)=> {
   return new Promise((resolve, reject)=> {
-    axios.get(url + '/position/prev-id/' + prevId).then((res)=> {
+    instance.get(api.position + prevId).then((res)=> {
       resolve(res)
     }).catch((error)=> {
       reject(error)
