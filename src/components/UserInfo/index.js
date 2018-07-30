@@ -1,5 +1,9 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
+import {Link, withRouter} from 'react-router-dom'
+
+import {getUserInfo} from '../../api/user'
+import {getGender} from '../../api/keyword'
+import {defaultAvatar, getGenderInfo} from '../../assets/common'
 
 import './index.scss'
 
@@ -12,9 +16,13 @@ class UserInfo extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      sex: '保密',
-      name: 'jd_1886182z',
-      portrait: 'http://y1y-src.oss-cn-shanghai.aliyuncs.com/uploads/Q/Qdh4nAHglce5Bkn7PTKf/d/4/e/0/5b3db4fd3eab9.jpeg',
+      userInfo: {
+        gender: '保密',
+        name: '',
+        avatar: defaultAvatar,
+        account: ''
+      },
+      genderArr: [],
       showPortrait: false,
       showName: false,
       showSex: false
@@ -24,6 +32,20 @@ class UserInfo extends React.Component {
     this.changeSexFlag = this.changeSexFlag.bind(this)
     this.changeSex = this.changeSex.bind(this)
     this.changeName = this.changeName.bind(this)
+  }
+
+  componentDidMount () {
+    Promise.all([getUserInfo(), getGender()]).then((res)=> {
+      let userInfo = res[0].data
+      let genderArr = res[1].data
+      userInfo.gender = getGenderInfo(genderArr, userInfo.gender)
+      this.setState({
+        userInfo: userInfo,
+        genderArr: genderArr
+      })
+    }).catch((error)=> {
+      this.props.history.replace('/login')
+    })
   }
 
   changePortraitFlag () {
@@ -44,35 +66,38 @@ class UserInfo extends React.Component {
     })
   }
 
-  changeSex (sex) {
+  changeSex (gender) {
+    this.state.userInfo.gender = getGenderInfo(this.state.genderArr, gender)
     this.setState({
-      sex: sex
+      userInfo: this.state.userInfo
     })
     this.changeSexFlag()
   }
 
   changeName (name) {
+    this.state.userInfo.name = name
     this.setState({
-      name: name
+      userInfo: this.state.userInfo
     })
     this.changeNameFlag()
   }
 
   render () {
-    const {sex, name, portrait, showPortrait, showName, showSex} = this.state
+    const {showPortrait, showName, showSex, genderArr} = this.state
+    const {gender, account, name, avatar} = this.state.userInfo
     return (
       <section className='userinfo'>
         <div className='userinfo-list'>
           <div className='userinfo-list-item'>
             <p>头像</p>
             <p onClick={this.changePortraitFlag}>
-              <img src={portrait} alt=''/>
+              <img src={avatar} alt=''/>
               <Icon icon='enter'/>
             </p>
           </div>
           <div className='userinfo-list-item'>
             <p>用户名</p>
-            <p>jd_5d0384hd74h3nx02</p>
+            <p>{account}</p>
           </div>
           <div className='userinfo-list-item'>
             <p>昵称</p>
@@ -84,17 +109,17 @@ class UserInfo extends React.Component {
           <div className='userinfo-list-item'>
             <p>性别</p>
             <p onClick={this.changeSexFlag}>
-              <span>{sex}</span>
+              <span>{gender}</span>
               <Icon icon='enter'/>
             </p>
           </div>
         </div>
         {showPortrait ? <Portrait change={this.changePortraitFlag}/> : ''}
         {showName ? <Name change={this.changeNameFlag} changeName={this.changeName}/> : ''}
-        {showSex ? <Sex change={this.changeSexFlag} changeSex={this.changeSex}/> : ''}
+        {showSex ? <Sex change={this.changeSexFlag} changeSex={this.changeSex} genderArr={genderArr}/> : ''}
       </section>
     )
   }
 }
 
-export default UserInfo
+export default withRouter(UserInfo)

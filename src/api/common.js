@@ -3,8 +3,10 @@ import axios from "axios";
 const api = {
   login: 'user/login',
   logout: 'user/logout',
-  position: 'position/prev-id/',
-  address: 'address'
+  position: 'position/prev-id',
+  address: 'address',
+  user: 'user/info',
+  gender: 'keyword/gender'
 }
 
 var instance = axios.create({
