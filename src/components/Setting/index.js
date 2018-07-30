@@ -1,5 +1,6 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
+import {Link, withRouter} from 'react-router-dom'
+import {logout} from '../../api/login'
 
 import './index.scss'
 
@@ -15,8 +16,7 @@ class Setting extends React.Component {
       desc: ''
     }
     this.showModal = this.showModal.bind(this)
-    this._hideModal = this._hideModal.bind(this)
-    this.makeSure = this.makeCancel.bind(this)
+    this.makeSure = this.makeSure.bind(this)
     this.makeCancel = this.makeCancel.bind(this)
   }
 
@@ -28,18 +28,18 @@ class Setting extends React.Component {
     })
   }
 
-  _hideModal () {
-    this.setState({
-      showModal: false
+  makeSure () {
+    logout().then((res)=> {
+      this.props.history.replace('/login')
+    }).catch((error)=> {
+      console.log(error)
     })
   }
 
-  makeSure () {
-    this._hideModal()
-  }
-
   makeCancel () {
-    this._hideModal()
+    this.setState({
+      showModal: false
+    })
   }
 
   render () {
@@ -87,4 +87,4 @@ class Setting extends React.Component {
   }
 }
 
-export default Setting
+export default withRouter(Setting)
