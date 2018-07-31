@@ -7,19 +7,19 @@ class Portrait extends React.Component {
     super(props)
   }
 
-  getAlbum (e) {
-    e.stopPropagation()
+  getAlbum () {
+
   }
 
-  takePhoto (e) {
-    e.stopPropagation()
+  takePhoto () {
+
   }
 
   render () {
     const {change} = this.props
     return (
       <div className='float-mask userinfo-float' onClick={change}>
-        <div className='userinfo-change'>
+        <div className='userinfo-change' onClick={(e)=> {e.stopPropagation()}}>
           <p className='userinfo-change-title'>修改头像</p>
           <div className='userinfo-change-list'>
             <p onClick={this.getAlbum}>

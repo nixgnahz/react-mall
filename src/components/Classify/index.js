@@ -1,11 +1,8 @@
-import React from 'react'
-import ReactDom from 'react-dom'
-
-import './index.scss'
-
-import Menu from '../../router/index'
-import List from './List'
-import Content from './Content'
+import React from "react";
+import "./index.scss";
+import Menu from "../../router/index";
+import List from "./List";
+import Content from "./Content";
 
 const classArr = [
   {
@@ -1000,7 +997,7 @@ class Classify extends React.Component {
   }
 
   shouldComponentUpdate (nextProps, nextState) {
-    if(nextState.activeIndex === this.state.activeIndex) {
+    if (nextState.activeIndex === this.state.activeIndex) {
       return false
     }
     return true

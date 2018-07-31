@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import {getCategory, getCategoryList} from "../../api/product";
 
 import './index.scss'
 
@@ -7,49 +8,6 @@ import Slider from './Slider'
 import Category from './Category'
 import List from './List'
 import Menu from '../../router/index'
-
-const categoryArr = [
-  {
-    id: 1,
-    name: '热门'
-  },
-  {
-    id: 2,
-    name: '服饰'
-  },
-  {
-    id: 3,
-    name: '鞋包'
-  },
-  {
-    id: 4,
-    name: '母婴'
-  },
-  {
-    id: 5,
-    name: '百货'
-  },
-  {
-    id: 6,
-    name: '食品'
-  },
-  {
-    id: 7,
-    name: '内衣'
-  },
-  {
-    id: 8,
-    name: '家电'
-  },
-  {
-    id: 9,
-    name: '手表'
-  },
-  {
-    id: 10,
-    name: '家具'
-  }
-]
 
 const swiper = [
   {
@@ -119,18 +77,36 @@ class Home extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      activeIndex: 0
+      activeIndex: 0,
+      categoryArr: []
     }
     this.changeMenu = this.changeMenu.bind(this)
   }
 
+  componentDidMount () {
+    getCategory().then((res)=> {
+      this.setState({
+        categoryArr: res.data
+      })
+    }).catch((error)=> {
+      console.log(error)
+    })
+  }
+
   changeMenu (index) {
+    let id = this.state.categoryArr[index].id
+    getCategoryList(id, 0 , 10).then((res)=> {
+      console.log(res)
+    }).catch((error)=> {
+      console.log(error)
+    })
     this.setState({
       activeIndex: index
     })
   }
 
   render () {
+    const {categoryArr} = this.state
     return (
       <section className='home'>
         <Search/>

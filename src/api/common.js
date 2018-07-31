@@ -6,7 +6,8 @@ const api = {
   position: 'position/prev-id',
   address: 'address',
   user: 'user/info',
-  gender: 'keyword/gender'
+  gender: 'keyword/gender',
+  category: 'product-category'
 }
 
 var instance = axios.create({
