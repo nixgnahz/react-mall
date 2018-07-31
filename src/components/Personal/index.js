@@ -1,8 +1,7 @@
 import React from 'react'
-import {withRouter} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 
 import {getUserInfo} from '../../api/user'
-import {defaultAvatar} from '../../assets/common'
 
 import Header from './Header'
 import Orders from './Orders'
@@ -10,6 +9,7 @@ import Actions from './Actions'
 import Info from './Info'
 import Recommend from '../Recommend/index'
 import Menu from '../../router/index'
+import Login from './Login'
 import './index.scss'
 
 class Personal extends React.Component {
@@ -17,36 +17,34 @@ class Personal extends React.Component {
     super(props)
     this.state = {
       userInfo: {
-        avatar: defaultAvatar,
-        name: '请登录',
+        avatar: '',
+        name: '',
         account: ''
-      }
+      },
+      showLogin: true
     }
   }
 
   componentDidMount () {
     getUserInfo().then((res)=> {
       this.setState({
-        userInfo: res.data
+        userInfo: res.data,
+        showLogin: false
       })
-    }).catch((error)=> {
-      this.props.history.replace('/login')
     })
   }
 
   render () {
-    const {userInfo} = this.state
+    const {userInfo, showLogin} = this.state
+    const LoginComponent = <Link to='./login'><Login/></Link>
+    const UserComponent = <div><Header userInfo={userInfo}/><Orders/><Actions/><Info/><Recommend/></div>
     return (
       <section className="personal">
-        <Header userInfo={userInfo}/>
-        <Orders/>
-        <Actions/>
-        <Info/>
-        <Recommend/>
+        {!showLogin ? UserComponent : LoginComponent}
         <Menu/>
       </section>
     )
   }
 }
 
-export default withRouter(Personal)
+export default Personal

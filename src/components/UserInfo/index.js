@@ -1,9 +1,9 @@
 import React from 'react'
 import {Link, withRouter} from 'react-router-dom'
 
-import {getUserInfo} from '../../api/user'
+import {getUserInfo, editUserInfo} from '../../api/user'
 import {getGender} from '../../api/keyword'
-import {defaultAvatar, getGenderInfo} from '../../assets/common'
+import {getGenderInfo} from '../../assets/common'
 
 import './index.scss'
 
@@ -11,6 +11,8 @@ import Icon from '../common/Icon'
 import Name from './Name'
 import Portrait from './Portrait'
 import Sex from './Sex'
+
+const defaultAvatar = 'http://wx.11babay.cn/uploads/Q/Qdh4nAHglce5Bkn7PTKf/4/3/6/6/5b5ed2afdbd0d.png'
 
 class UserInfo extends React.Component {
   constructor(props) {
@@ -67,19 +69,37 @@ class UserInfo extends React.Component {
   }
 
   changeSex (gender) {
-    this.state.userInfo.gender = getGenderInfo(this.state.genderArr, gender)
-    this.setState({
-      userInfo: this.state.userInfo
+    this.editInfo({
+      gender: gender
+    }).then(()=> {
+      this.state.userInfo.gender = getGenderInfo(this.state.genderArr, gender)
+      this.setState({
+        userInfo: this.state.userInfo
+      })
+      this.changeSexFlag()
     })
-    this.changeSexFlag()
   }
 
   changeName (name) {
-    this.state.userInfo.name = name
-    this.setState({
-      userInfo: this.state.userInfo
+    this.editInfo({
+      name: name
+    }).then(()=> {
+      this.state.userInfo.name = name
+      this.setState({
+        userInfo: this.state.userInfo
+      })
+      this.changeNameFlag()
     })
-    this.changeNameFlag()
+  }
+
+  editInfo (params) {
+    return new Promise((resolve, reject)=> {
+      editUserInfo(params).then((res)=> {
+        resolve(res)
+      }).catch((error)=> {
+        reject(error)
+      })
+    })
   }
 
   render () {
