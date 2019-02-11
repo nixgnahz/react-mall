@@ -996,21 +996,21 @@ class Classify extends React.Component {
     this.changeMenu = this.changeMenu.bind(this)
   }
 
-  shouldComponentUpdate (nextProps, nextState) {
+  shouldComponentUpdate(nextProps, nextState) {
     if (nextState.activeIndex === this.state.activeIndex) {
       return false
     }
     return true
   }
 
-  changeMenu (index) {
+  changeMenu(index) {
     this.setState({
       activeIndex: index,
       listArr: classArr[index]
     })
   }
 
-  render () {
+  render() {
     const {activeIndex, listArr} = this.state
     return (
       <section>

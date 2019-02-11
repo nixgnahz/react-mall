@@ -1,4 +1,4 @@
-import {api, instance} from "./common";
+import {api, instance} from "./common"
 
 const getAddressList = ()=> {
   return new Promise((resolve, reject)=> {
